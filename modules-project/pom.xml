@@ -6,6 +6,7 @@
     <modules>
         <module>modules-parent</module>
         <module>modules-core</module>
+        <module>modules-libs</module>
     </modules>
 
     <groupId>com.realaicy.tna.modules</groupId>

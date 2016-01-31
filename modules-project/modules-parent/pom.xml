@@ -19,9 +19,8 @@
         <sonar.language>java</sonar.language>
 
         <dozer.version>5.5.1</dozer.version>
-        <assertj.version>1.7.0</assertj.version>
-        <jackson.version>2.4.5</jackson.version>
-        <commons-codec.version>1.10</commons-codec.version>
+        <assertj.version>2.3.0</assertj.version>
+        <jackson.version>2.6.4</jackson.version>
 
         <maven-compiler-plugin.version>3.5</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
@@ -62,7 +61,7 @@
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>1.1.2.RELEASE</version>
+                <version>2.0.1.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

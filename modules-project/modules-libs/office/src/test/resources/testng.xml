@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="UtilsTests" verbose="1">
+
+    <test name="FuncTest">
+        <packages>
+            <package name="com.realaicy.tna.modules.core"/>
+        </packages>
+    </test>
+
+    <test name="RegressionTest">
+        <packages>
+            <package name="test.sample"/>
+        </packages>
+    </test>
+</suite>
