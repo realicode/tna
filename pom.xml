@@ -5,21 +5,37 @@
   <groupId>com.realaicy.tna</groupId>
   <artifactId>tna-project</artifactId>
   <version>2.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <modules>
+    <module>modules-project</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>tna-project</name>
-  <url>http://maven.apache.org</url>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${mvnplugin.maven-site-plugin.version}</version>
+        <configuration>
+          <locales>zh_CN</locales>
+          <outputEncoding>UTF-8</outputEncoding>
+          <inputEncoding>UTF-8</inputEncoding>
+        </configuration>
+      </plugin>
+
+      <!-- versions相关插件 -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>${mvnplugin.versions.version}</version>
+      </plugin>
+    </plugins>
+  </build>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <mvnplugin.maven-site-plugin.version>3.4</mvnplugin.maven-site-plugin.version>
+    <mvnplugin.versions.version>2.2</mvnplugin.versions.version>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 </project>
