@@ -18,9 +18,12 @@
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <sonar.language>java</sonar.language>
 
+        <platform-bom.version>2.0.2.RELEASE</platform-bom.version>
+
         <dozer.version>5.5.1</dozer.version>
         <assertj.version>2.3.0</assertj.version>
         <jackson.version>2.6.4</jackson.version>
+
 
         <maven-compiler-plugin.version>3.5</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
@@ -61,7 +64,7 @@
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>2.0.1.RELEASE</version>
+                <version>${platform-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
