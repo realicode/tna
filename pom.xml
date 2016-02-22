@@ -7,6 +7,8 @@
   <version>2.0-SNAPSHOT</version>
   <modules>
     <module>modules-project</module>
+    <module>ui-project</module>
+    <module>demos-project</module>
   </modules>
   <packaging>pom</packaging>
 

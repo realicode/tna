@@ -1,10 +1,13 @@
 package com.realaicy.tna.modules.core.beanvalidator;
 
+import com.realaicy.tna.modules.core.test.data.TCListener;
+import com.realaicy.tna.modules.core.test.data.TCWatcher;
 import com.realaicy.tna.modules.core.test.spring.SpringBaseNGTest;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import javax.validation.ConstraintViolation;
@@ -18,7 +21,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
-
+@Listeners(TCListener.class)
 public class BeanValidatorsTest extends SpringBaseNGTest {
 
     @Autowired
