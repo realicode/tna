@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>君子好彩</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" th:uri="@{/css/bootstrap.min.css}"
+          uri="../static/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link th:uri="@{/css/sb-admin-2.css}" uri="../static/css/sb-admin-2.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" th:uri="@{/css/real.css}" uri="../static/css/real.css"/>
+
+
+</head>
+
+<body class="realoginbg">
+
+<div class="container">
+    <p th:if="${param.logout}" class="alert">You have been logged out</p>
+
+    <p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default  panel-transparent">
+                <div class="panel-heading">
+                    <h3 class="panel-title">系统登录</h3>
+                </div>
+                <div class="panel-body">
+                    <form name="form" th:action="@{/login}" method="POST">
+                        <fieldset>
+                            <div class="form-group">
+                                <input type="text" id="inputUsername" class="form-control" name="username" value=""
+                                       placeholder="手机号码" autofocus=""/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="密 码" name="password" type="password"
+                                       value=""/>
+                            </div>
+                            <div class="checkbox" style="color: #ffffff;">
+                                <label>
+                                    <input name="remember" type="checkbox" value="Remember Me"/>自动登录
+                                </label>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <!--
+                                                        <a uri="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                            -->
+                            <button class="btn btn-lg btn-success btn-block" type="submit">开始挣钱</button>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

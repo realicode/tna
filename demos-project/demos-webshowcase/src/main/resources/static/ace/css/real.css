@@ -1,0 +1,105 @@
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+    font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+.realoginbg {
+    background: url(../images/login/bg3.png);
+}
+
+.div-b {
+    filter: alpha(Opacity=30);
+    -moz-opacity: 0.3;
+    opacity: 0.3
+}
+
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading {
+    background: rgba(122, 130, 136, 0.1) !important;
+    color: white;
+}
+
+.panel-transparent .panel-body {
+    background: rgba(245, 245, 245, 0.1) !important;
+}
+
+.table tbody > tr > td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table thead > tr > th {
+    text-align: center;
+}
+
+table tr {
+    height: 14px;
+}
+
+span.red_Ball, span.blue_Ball {
+    display: inline-block;
+    width: 25px;
+    height: 26px;
+    background: url(../realimages/kjgg.png) no-repeat;
+    text-align: center;
+    color: #fff;
+    font-weight: 200;
+    margin: 2px;
+    line-height: 24px;
+}
+
+span.red_Ball {
+    background-position: -52px -40px;
+}
+
+span.blue_Ball {
+    background-position: -82px -40px;
+}
+
+.big_label {
+    border: 0 none;
+    width: 26px;
+    height: 26px;
+    margin-top: 0;
+    margin-right: 1px;
+
+    text-align: center;
+    /*font: 18px/20px arial;*/
+    background: none;
+    color: #fff;
+    font-size: x-large;
+    font-family: Arial;
+    *margin-right: 1px;
+}
+.big_label_sum {
+    border: 0 none;
+    width: 36px;
+    height: 26px;
+    margin-top: 5px;
+    margin-right: 1px;
+
+    text-align: center;
+    /*font: 18px/20px arial;*/
+    background: none;
+    color: #fff;
+    font-size: large;
+    font-family: Arial;
+    *margin-right: 1px;
+}
+
+span.red_Ball_Big, span.blue_Ball_Big {
+    background: url(../realimages/index_bg.png) no-repeat -4px -140px;
+    display: inline-block;
+    border: 0 none;
+    height: 40px;
+    width: 36px;
+    margin-right: 7px;
+    text-align: center;
+    *zoom: 1;
+}
+
+span.blue_Ball_Big {
+    background-position: -53px -140px;
+}

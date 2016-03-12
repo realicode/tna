@@ -1,0 +1,360 @@
+<title>综合看板 - 月夜我飞翔</title>
+
+<!-- ajax layout which only needs content area -->
+<!--<div class="page-header">
+</div>&lt;!&ndash; /.page-header &ndash;&gt;-->
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="alert alert-block alert-success">
+            <button type="button" class="close" data-dismiss="alert">
+                <i class="ace-icon fa fa-times"></i>
+            </button>
+            <i class="ace-icon fa fa-check green"></i>
+            欢迎访问 月夜我飞翔 智能家居管理系统。 特别鸣谢：我的老婆
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="widget-box transparent" id="recent-box">
+                    <div class="widget-header">
+                        <h5 class="widget-title lighter smaller">
+                            <i class="ace-icon fa fa-rss orange"></i>最新资讯
+                        </h5>
+
+                        <div class="widget-toolbar no-border">
+                            <ul class="nav nav-tabs" id="recent-tab">
+                                <li class="active">
+                                    <a data-toggle="tab" uri="#lot-tab">彩票系统</a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="tab" uri="#monitor-tab">监控系统</a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="tab" uri="#info-tab">信息聚合系统</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main padding-4">
+                            <div class="tab-content padding-8">
+                                <div id="lot-tab" class="tab-pane active">
+                                    <!-- #section:pages/dashboard.tasks -->
+                                    <div class="col-sm-6">
+                                        <div class="widget-box">
+                                            <div class="widget-header widget-header-flat widget-header-small">
+                                                <h6 class="widget-title">
+                                                    <i class="ace-icon fa fa-signal"></i>
+                                                    最新彩票开奖信息
+                                                </h6>
+
+                                                <div class="widget-toolbar">
+                                                    <div class="inline dropdown-hover">
+                                                        <button class="btn btn-minier btn-primary">
+                                                            全国主要彩种
+                                                            <i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
+                                                        </button>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
+                                                            <li class="active">
+                                                                <a uri="#" class="blue">
+                                                                    <i class="ace-icon fa fa-caret-right bigger-110">
+                                                                        &nbsp;</i>
+                                                                    足彩
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a uri="#">
+                                                                    <i class="ace-icon fa fa-caret-right bigger-110 invisible">
+                                                                        &nbsp;</i>
+                                                                    Last Week
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a uri="#">
+                                                                    <i class="ace-icon fa fa-caret-right bigger-110 invisible">
+                                                                        &nbsp;</i>
+                                                                    This Month
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a uri="#">
+                                                                    <i class="ace-icon fa fa-caret-right bigger-110 invisible">
+                                                                        &nbsp;</i>
+                                                                    Last Month
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="widget-menu">
+                                                        <a uri="#" data-action="settings" data-toggle="dropdown">
+                                                            <i class="ace-icon fa fa-bars"></i>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+                                                            <li>
+                                                                <a data-toggle="tab" uri="#dropdown1">Option#1</a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a data-toggle="tab" uri="#dropdown2">Option#2</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <a uri="#" data-action="fullscreen" class="orange2">
+                                                        <i class="ace-icon fa fa-expand"></i>
+                                                    </a>
+
+                                                    <a uri="#" data-action="reload">
+                                                        <i class="ace-icon fa fa-refresh"></i>
+                                                    </a>
+
+                                                    <a uri="#" data-action="collapse">
+                                                        <i class="ace-icon fa fa-chevron-up"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="widget-body">
+                                                <div class="widget-main">
+                                                    <!-- #section:plugins/charts.flotchart -->
+                                                    <div id="piechart-placeholder">
+                                                        <ul>
+                                                            <li>
+                                                                <p>双色球大大号</p>
+
+                                                                <span class="red_Ball_Big"><label
+                                                                        class="big_label">05</label></span>
+                                                                <span class="red_Ball_Big"><label
+                                                                        class="big_label">08</label></span>
+                                                                <span class="red_Ball_Big"><label
+                                                                        class="big_label">11</label></span>
+                                                                <span class="red_Ball_Big"><label
+                                                                        class="big_label">17</label></span>
+                                                                <span class="red_Ball_Big"><label
+                                                                        class="big_label">24</label></span>
+                                                                <span class="red_Ball_Big"><label
+                                                                        class="big_label">28</label></span>
+                                                                <span class="blue_Ball_Big"
+                                                                      style="margin-left: 11px"><label
+                                                                        class="big_label">16</label></span>
+
+                                                                <p></p>
+                                                            </li>
+
+                                                            <li><p>双色球小号</p>
+                                                                <span class="red_Ball">05</span>
+                                                                <span class="red_Ball">08</span>
+                                                                <span class="red_Ball">11</span>
+                                                                <span class="red_Ball">17</span>
+                                                                <span class="red_Ball">24</span>
+                                                                <span class="red_Ball">28</span>
+                                                                <span class="blue_Ball">16</span></li>
+
+
+                                                            <li>Unordered List Item</li>
+
+
+                                                        </ul>
+
+                                                    </div>
+                                                    <!-- /section:plugins/charts.flotchart -->
+                                                </div>
+                                                <!-- /.widget-main -->
+                                            </div>
+                                            <!-- /.widget-body -->
+                                        </div>
+                                        <!-- /.widget-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <!-- /section:pages/dashboard.tasks -->
+                                </div>
+
+                                <div id="monitor-tab" class="tab-pane">
+                                    <!-- #section:pages/dashboard.members -->
+
+                                    <!-- /.#member-tab -->
+                                </div>
+                                <div id="info-tab" class="tab-pane">
+                                    <!-- #section:pages/dashboard.comments -->
+                                    <div class="comments">
+                                        <div class="itemdiv commentdiv">
+                                            <div class="user">
+                                            </div>
+
+                                            <div class="body">
+                                                <div class="name">
+                                                    <a uri="#">Bob Doe</a>
+                                                </div>
+
+                                                <div class="time">
+                                                    <i class="ace-icon fa fa-clock-o"></i>
+                                                    <span class="green">6 min</span>
+                                                </div>
+
+                                                <div class="text">
+                                                    <i class="ace-icon fa fa-quote-left"></i>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                    commodo massa sed ipsum porttitor facilisis &hellip;
+                                                </div>
+                                            </div>
+
+                                            <div class="tools">
+                                                <div class="inline position-relative">
+                                                    <button class="btn btn-minier bigger btn-yellow dropdown-toggle"
+                                                            data-toggle="dropdown">
+                                                        <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                                    </button>
+
+                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                        <li>
+                                                            <a uri="#" class="tooltip-success" data-rel="tooltip"
+                                                               title="Approve">
+																<span class="green">
+																	<i class="ace-icon fa fa-check bigger-110"></i>
+																</span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a uri="#" class="tooltip-warning" data-rel="tooltip"
+                                                               title="Reject">
+																<span class="orange">
+																	<i class="ace-icon fa fa-times bigger-110"></i>
+																</span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a uri="#" class="tooltip-error" data-rel="tooltip"
+                                                               title="Delete">
+																<span class="red">
+																	<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hr hr8"></div>
+
+                                    <div class="center">
+                                        <i class="ace-icon fa fa-comments-o fa-2x green middle"></i>
+
+                                        &nbsp;
+                                        <a uri="#" class="btn btn-sm btn-white btn-info">
+                                            See all comments &nbsp;
+                                            <i class="ace-icon fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="hr hr-double hr8"></div>
+
+                                    <!-- /section:pages/dashboard.comments -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.widget-main -->
+                    </div>
+                    <!-- /.widget-body -->
+                </div>
+                <!-- /.widget-box -->
+            </div>
+            <!-- /.col -->
+
+            <div class="col-sm-4">
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h5 class="widget-title lighter smaller">
+                            <i class="ace-icon fa fa-comment blue"></i>
+                            即时通信消息
+                        </h5>
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main no-padding">
+                            <!-- #section:pages/dashboard.conversations -->
+                            <div class="dialogs">
+                                <div class="itemdiv dialogdiv">
+                                    <div class="user">
+                                        <img alt="Alexa's Avatar" xmlns:th="http://www.thymeleaf.org"
+                                             th:src="@{/realimages/touxiang2.png}"
+                                             src="../../resources/static/realimages/touxiang2.png"/>
+                                    </div>
+
+                                    <div class="body">
+                                        <div class="time">
+                                            <i class="ace-icon fa fa-clock-o"></i>
+                                            <span class="green">4 sec</span>
+                                        </div>
+
+                                        <div class="name">
+                                            <a uri="#">老婆大人</a>
+                                        </div>
+                                        <div class="text">
+                                            赶快回家吃饭。
+                                        </div>
+
+                                        <div class="tools">
+                                            <a uri="#" class="btn btn-minier btn-info">
+                                                <i class="icon-only ace-icon fa fa-share"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- /section:pages/dashboard.conversations -->
+                            <form>
+                                <div class="form-actions">
+                                    <div class="input-group">
+                                        <input placeholder="请输入消息 ..." type="text" class="form-control"
+                                               name="message"/>
+										<span class="input-group-btn">
+											<button class="btn btn-sm btn-info no-radius" type="button">
+                                                <i class="ace-icon fa fa-share"></i>
+                                                发送
+                                            </button>
+										</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.widget-main -->
+                    </div>
+                    <!-- /.widget-body -->
+                </div>
+                <!-- /.widget-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- PAGE CONTENT ENDS -->
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
+
+<!-- page specific plugin scripts -->
+
+<script type="text/javascript">
+    var scripts = [null, null]
+    $('.page-content-area').ace_ajax('loadScripts', scripts, function () {
+        //inline scripts related to this page
+    });
+</script>

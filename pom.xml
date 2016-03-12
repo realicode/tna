@@ -9,6 +9,8 @@
     <module>modules-project</module>
     <module>ui-project</module>
     <module>demos-project</module>
+    <module>study-project</module>
+    <module>temp-project</module>
   </modules>
   <packaging>pom</packaging>
 

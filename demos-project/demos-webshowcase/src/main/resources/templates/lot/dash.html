@@ -1,0 +1,80 @@
+<title>Dash</title>
+
+<!-- ajax layout which only needs content area -->
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="widget-box">
+            <div class="widget-header widget-header-small">
+                <h5 class="widget-title smaller">最新开奖结果</h5>
+
+                <!-- #section:custom/widget-box.tabbed -->
+                <div class="widget-toolbar no-border">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a data-toggle="tab" uri="#newDrawDataMainCP">主要彩种</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="tab" uri="#newDrawDataShort">即开型</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="tab" uri="#newDrawDataSports">体育相关</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- /section:custom/widget-box.tabbed -->
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main padding-6">
+                    <div class="tab-content">
+                        <div id="newDrawDataMainCP" class="tab-pane in active">
+                            <div class="list-group">
+                                <h5 class="list-group-item-heading">双色球</h5>
+
+                                <p class="list-group-item-text">...</p>
+                            </div>
+                            <div class="list-group">
+                                <h5 class="list-group-item-heading">大乐透</h5>
+
+                                <p class="list-group-item-text">...</p>
+                            </div>
+                            <div class="list-group">
+                                <h5 class="list-group-item-heading">七星彩</h5>
+
+                                <p class="list-group-item-text">...</p>
+                            </div>
+                        </div>
+
+                        <div id="newDrawDataShort" class="tab-pane">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+                                squid.</p>
+                        </div>
+
+                        <div id="newDrawDataSports" class="tab-pane">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
+                                mcsweeney's
+                                organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div>
+        <!-- /.col -->
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+    var scripts = [null, null]
+    $('.page-content-area').ace_ajax('loadScripts', scripts, function () {
+        $('.nav-tabs > li > a').hover(function () {
+            $(this).tab('show');
+        });
+    });
+</script>

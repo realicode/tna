@@ -2,6 +2,7 @@ package com.realaicy.tna.modules.core.orm.jpa;
 
 import com.realaicy.tna.modules.core.orm.jpa.search.Searchable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
 import javax.persistence.EntityManager;
@@ -24,7 +25,7 @@ public class SimpleBaseRepository<T, ID extends Serializable>
     /**
      * xxx
      */
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
 
     /**
@@ -37,6 +38,14 @@ public class SimpleBaseRepository<T, ID extends Serializable>
     public SimpleBaseRepository(Class<T> domainClass, EntityManager entityManager) {
         super(domainClass, entityManager);
 // This is the recommended method for accessing inherited class dependencies.
+        this.entityManager = entityManager;
+    }
+
+    public SimpleBaseRepository(JpaEntityInformation entityInformation,
+                            EntityManager entityManager) {
+        super(entityInformation, entityManager);
+
+        // Keep the EntityManager around to used from the newly introduced methods.
         this.entityManager = entityManager;
     }
 

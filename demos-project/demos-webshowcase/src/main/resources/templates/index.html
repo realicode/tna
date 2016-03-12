@@ -1,0 +1,274 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+    <title>Realaicy系统集成</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/ace/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" href="../static/ace/css/font-awesome.min.css"/>
+    <!-- text fonts -->
+    <link rel="stylesheet" th:href="@{/css/ace-fonts.min.css}" href="../static/ace/css/ace-fonts.min.css"/>
+
+    <!-- ace styles -->
+    <link rel="stylesheet" th:href="@{/css/ace.min.css}" href="../static/ace/css/ace.min.css"
+          class="ace-main-stylesheet"
+          id="main-ace-style"/>
+
+    <link rel="stylesheet" th:href="@{/css/real.css}" href="../static/ace/css/real.css"/>
+
+    <script th:src="@{/js/ace-extra.js}" src="../static/ace/js/ace-extra.js"></script>
+
+</head>
+
+<body class="no-skin">
+<!-- #section:basics/navbar.layout -->
+<div id="navbar" class="navbar navbar-default">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <div class="navbar-container" id="navbar-container">
+
+        <div class="navbar-header pull-left">
+            <!-- #section:basics/navbar.layout.brand -->
+            <a href="#" class="navbar-brand">
+                <small>
+                    <i class="fa fa-leaf"></i>
+                    月夜我飞翔
+                </small>
+            </a>
+
+        </div>
+    </div>
+    <!-- /.navbar-container -->
+</div>
+
+<!-- /section:basics/navbar.layout -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('main-container', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'fixed')
+            } catch (e) {
+            }
+        </script>
+
+        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <button class="btn btn-success">
+                    <i class="ace-icon fa fa-signal"></i>
+                </button>
+
+                <button class="btn btn-info">
+                    <i class="ace-icon fa fa-pencil"></i>
+                </button>
+
+                <!-- #section:basics/sidebar.layout.shortcuts -->
+                <button class="btn btn-warning">
+                    <i class="ace-icon fa fa-users"></i>
+                </button>
+
+                <button class="btn btn-danger">
+                    <i class="ace-icon fa fa-cogs"></i>
+                </button>
+
+                <!-- /section:basics/sidebar.layout.shortcuts -->
+            </div>
+
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <span class="btn btn-success"></span>
+
+                <span class="btn btn-info"></span>
+
+                <span class="btn btn-warning"></span>
+
+                <span class="btn btn-danger"></span>
+            </div>
+        </div>
+        <!-- /.sidebar-shortcuts -->
+
+        <ul class="nav nav-list">
+            <!--/*@thymesVar id="realmenus" type="com.realaicy.tna.demos.webshowcase.modules.system.menu.model.Menu"*/-->
+            <li class="" th:each="menu : ${realmenus}">
+                <a th:attr="data-url=${menu.uri}" data-th-url="${menu.uri}" th:uri="'#'+${menu.uri}"
+                   th:if="${ #lists.isEmpty(menu.children)}">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text" th:text="${menu.name}"> </span>
+                </a>
+
+                <a th:attr="data-url=${menu.uri}" th:uri="'#'+${menu.uri}" class="dropdown-toggle"
+                   th:if="${not #lists.isEmpty(menu.children)}">
+                    <i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text" th:text="${menu.name}">
+							</span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+
+                <ul class="submenu" th:if="${not #lists.isEmpty(menu.children)}">
+                    <li class="" th:each="menu2 : ${menu.children}">
+                        <a th:attr="data-url=${menu2.uri}" data-th-url="${menu2.uri}" th:uri="'#'+${menu2.uri}"
+                           th:if="${ #lists.isEmpty(menu2.children)}">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            <span th:text="${menu2.name}"></span>
+                        </a>
+                        <a th:attr="data-url=${menu2.uri}" data-th-url="${menu2.uri}" th:uri="'#'+${menu2.uri}"
+                           class="dropdown-toggle"
+                           th:if="${not #lists.isEmpty(menu2.children)}">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            <span th:text="${menu2.name}"></span>
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu" th:if="${not #lists.isEmpty(menu2.children)}">
+                            <li class="" th:each="menu3 : ${menu2.children}">
+                                <a th:attr="data-url=${menu3.uri}" th:uri="'#'+${menu3.uri}">
+                                    <i class="menu-icon fa fa-leaf green"></i>
+                                    <span th:text="${menu3.name}"></span>
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+        <!-- /.nav-list -->
+
+        <!-- #section:basics/sidebar.layout.minimize -->
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left"
+               data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+
+        <!-- /section:basics/sidebar.layout.minimize -->
+        <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'collapsed')
+            } catch (e) {
+            }
+        </script>
+    </div>
+
+    <!-- /section:basics/sidebar -->
+    <div class="main-content">
+        <div class="main-content-inner">
+            <!-- #section:basics/content.breadcrumbs -->
+            <div class="breadcrumbs" id="breadcrumbs">
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('breadcrumbs', 'fixed')
+                    } catch (e) {
+                    }
+                </script>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a th:href="@{/}" href="/">首页</a>
+                    </li>
+                </ul>
+                <!-- /.breadcrumb -->
+
+                <!-- #section:basics/content.searchbox -->
+                <div class="nav-search" id="nav-search">
+                    <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input"
+                                           id="nav-search-input" autocomplete="off"/>
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+                    </form>
+                </div>
+                <!-- /.nav-search -->
+
+                <!-- /section:basics/content.searchbox -->
+            </div>
+
+            <!-- /section:basics/content.breadcrumbs -->
+            <div class="page-content">
+                <!-- #section:settings.box -->
+                <!-- /.ace-settings-container -->
+
+                <!-- /section:settings.box -->
+                <div class="page-content-area" data-ajax-content="true">
+                    <!-- ajax content goes here -->
+                </div>
+                <!-- /.page-content-area -->
+            </div>
+            <!-- /.page-content -->
+        </div>
+    </div>
+    <!-- /.main-content -->
+
+    <div class="footer">
+        <div class="footer-inner">
+            <!-- #section:basics/footer -->
+            <div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Realaicy</span>
+							Application &copy; 2015
+                            <!--/*@thymesVar id="realversion" type="a"*/-->
+                            <span th:text="${realversion}"></span>
+						</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div>
+<!-- /.main-container -->
+
+<!-- basic scripts -->
+
+
+<script th:src="@{/js/jquery.min.js}" src="../static/ace/js/jquery.min.js"></script>
+
+<script th:src="@{/js/bootstrap.min.js}" src="../static/ace/js/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script th:src="@{/js/ace/elements.scroller.js}" src="../static/ace/js/ace/elements.scroller.js"></script>
+<script th:src="@{/js/ace/elements.colorpicker.js}" src="../static/ace/js/ace/elements.colorpicker.js"></script>
+<script th:src="@{/js/ace/elements.fileinput.js}" src="../static/ace/js/ace/elements.fileinput.js"></script>
+<script th:src="@{/js/ace/elements.typeahead.js}" src="../static/ace/js/ace/elements.typeahead.js"></script>
+<script th:src="@{/js/ace/elements.wysiwyg.js}" src="../static/ace/js/ace/elements.wysiwyg.js"></script>
+<script th:src="@{/js/ace/elements.spinner.js}" src="../static/ace/js/ace/elements.spinner.js"></script>
+<script th:src="@{/js/ace/elements.treeview.js}" src="../static/ace/js/ace/elements.treeview.js"></script>
+<script th:src="@{/js/ace/elements.wizard.js}" src="../static/ace/js/ace/elements.wizard.js"></script>
+<script th:src="@{/js/ace/elements.aside.js}" src="../static/ace/js/ace/elements.aside.js"></script>
+<script th:src="@{/js/ace/ace.js}" src="../static/ace/js/ace/ace.js"></script>
+<script th:src="@{/js/ace/ace.ajax-content.js}" src="../static/ace/js/ace/ace.ajax-content.js"></script>
+<script th:src="@{/js/ace/ace.touch-drag.js}" src="../static/ace/js/ace/ace.touch-drag.js"></script>
+<script th:src="@{/js/ace/ace.sidebar.js}" src="../static/ace/js/ace/ace.sidebar.js"></script>
+<script th:src="@{/js/ace/ace.sidebar-scroll-1.js}" src="../static/ace/js/ace/ace.sidebar-scroll-1.js"></script>
+<script th:src="@{/js/ace/ace.submenu-hover.js}" src="../static/ace/js/ace/ace.submenu-hover.js"></script>
+<script th:src="@{/js/ace/ace.widget-box.js}" src="../static/ace/js/ace/ace.widget-box.js"></script>
+<script th:src="@{/js/ace/ace.settings.js}" src="../static/ace/js/ace/ace.settings.js"></script>
+<script th:src="@{/js/ace/ace.settings-rtl.js}" src="../static/ace/js/ace/ace.settings-rtl.js"></script>
+<script th:src="@{/js/ace/ace.settings-skin.js}" src="../static/ace/js/ace/ace.settings-skin.js"></script>
+<script th:src="@{/js/ace/ace.widget-on-reload.js}" src="../static/ace/js/ace/ace.widget-on-reload.js"></script>
+<script th:src="@{/js/ace/ace.searchbox-autocomplete.js}" src="../static/ace/js/ace/ace.searchbox-autocomplete.js"></script>
+
+</body>
+</html>

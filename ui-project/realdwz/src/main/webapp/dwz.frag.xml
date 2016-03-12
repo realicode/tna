@@ -7,10 +7,10 @@
 	<div class="dialogHeader" onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
 		<div class="dialogHeader_r">
 			<div class="dialogHeader_c">
-				<a class="close" href="#close">close</a>
-				<a class="maximize" href="#maximize">maximize</a>
-				<a class="restore" href="#restore">restore</a>
-				<a class="minimize" href="#minimize">minimize</a>
+				<a class="close" uri="#close">close</a>
+				<a class="maximize" uri="#maximize">maximize</a>
+				<a class="restore" uri="#restore">restore</a>
+				<a class="minimize" uri="#minimize">minimize</a>
 				<h1>弹出窗口</h1>
 			</div>
 		</div>
@@ -34,9 +34,9 @@
 	<div class="dialogHeader">
 		<div class="dialogHeader_r">
 			<div class="dialogHeader_c">
-				<a class="close" href="#close">close</a>
-				<a class="maximize" href="#maximize">maximize</a>
-				<a class="minimize" href="#minimize">minimize</a>
+				<a class="close" uri="#close">close</a>
+				<a class="maximize" uri="#maximize">maximize</a>
+				<a class="minimize" uri="#minimize">minimize</a>
 				<h1></h1>
 			</div>
 		</div>
@@ -98,20 +98,20 @@
 <_PAGE_ id="pagination"><![CDATA[
 <ul>
 	<li class="j-first">
-		<a class="first" href="javascript:;"><span>首页</span></a>
+		<a class="first" uri="javascript:;"><span>首页</span></a>
 		<span class="first"><span>首页</span></span>
 	</li>
 	<li class="j-prev">
-		<a class="previous" href="javascript:;"><span>上一页</span></a>
+		<a class="previous" uri="javascript:;"><span>上一页</span></a>
 		<span class="previous"><span>上一页</span></span>
 	</li>
 	#pageNumFrag#
 	<li class="j-next">
-		<a class="next" href="javascript:;"><span>下一页</span></a>
+		<a class="next" uri="javascript:;"><span>下一页</span></a>
 		<span class="next"><span>下一页</span></span>
 	</li>
 	<li class="j-last">
-		<a class="last" href="javascript:;"><span>末页</span></a>
+		<a class="last" uri="javascript:;"><span>末页</span></a>
 		<span class="last"><span>末页</span></span>
 	</li>
 	<li class="jumpto"><input class="textInput" type="text" size="4" value="#currentPage#" /><input class="goto" type="button" value="确定" /></li>
@@ -125,7 +125,7 @@
 ]]></_PAGE_>
 		
 <_PAGE_ id="alertButFrag"><![CDATA[
-<li><a class="button" rel="#callback#" onclick="alertMsg.close()" href="javascript:"><span>#butMsg#</span></a></li>
+<li><a class="button" rel="#callback#" onclick="alertMsg.close()" uri="javascript:"><span>#butMsg#</span></a></li>
 ]]></_PAGE_>
 
 <_PAGE_ id="calendarFrag"><![CDATA[

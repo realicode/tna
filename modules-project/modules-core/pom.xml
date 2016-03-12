@@ -116,10 +116,7 @@
             </plugin>
 
             <!-- maven-checkstyle-plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
+
 
             <!-- findbugs-maven-plugin -->
             <plugin>

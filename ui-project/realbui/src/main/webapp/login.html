@@ -6,7 +6,7 @@
 <script src="BJUI/js/jquery-1.7.2.min.js"></script>
 <script src="BJUI/js/jquery.cookie.js"></script>
 <script src="js/sha256.js"></script>
-<link href="BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
+<link uri="BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
 * {font-family: "Verdana", "Tahoma", "Lucida Grande", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;}
 body {
@@ -79,7 +79,7 @@ $(function() {
 		$("#login_ok").attr("disabled", true).val('登陆中..');
 		var password = HMAC_SHA256_MAC($("#j_username").val(), $("#j_password").val());
 		$("#j_password").val(HMAC_SHA256_MAC($("#j_randomKey").val(), password));
-        window.location.href = 'index.html'; /*注意：生产环境时请删除此行*/
+        window.location.uri = 'index.html'; /*注意：生产环境时请删除此行*/
         return false;
 	});
 });
@@ -104,10 +104,10 @@ function choose_bg() {
 #errorie div a {color: #459f79;font-size: 14px;}
 #errorie div a:hover {text-decoration: underline;}
 </style>
-<div id="errorie"><div>您还在使用老掉牙的IE，请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
+<div id="errorie"><div>您还在使用老掉牙的IE，请升级您的浏览器到 IE8以上版本 <a target="_blank" uri="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a uri="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
 <![endif]-->
 <div class="main_box">
-    <div class="setting"><a href="javascript:;" onclick="choose_bg();" title="更换背景"><span class="glyphicon glyphicon-th-large"></span></a></div>
+    <div class="setting"><a uri="javascript:;" onclick="choose_bg();" title="更换背景"><span class="glyphicon glyphicon-th-large"></span></a></div>
 	<div class="login_box">
         <div class="login_logo">
             <img src="images/logo.png" >
@@ -145,7 +145,7 @@ function choose_bg() {
     		</form>
         </div>
 	</div>
-	<div class="bottom">Copyright &copy; 2013 - 2014 <a href="#">B-JUI 前端框架 - 系统登陆</a></div>
+	<div class="bottom">Copyright &copy; 2013 - 2014 <a uri="#">B-JUI 前端框架 - 系统登陆</a></div>
 </div>
 </body>
 </html>

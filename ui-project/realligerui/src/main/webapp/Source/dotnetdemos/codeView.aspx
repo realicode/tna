@@ -8,7 +8,7 @@
     <title></title> 
     <script src="../lib/syntaxhighlighter/scripts/shCore.js"></script>
     <script src="../lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-    <link href="../lib/syntaxhighlighter/styles/shCoreDefault.css" rel="stylesheet" />
+    <link uri="../lib/syntaxhighlighter/styles/shCoreDefault.css" rel="stylesheet" />
     <script type="text/javascript">SyntaxHighlighter.all();</script>
     <script src="../lib/syntaxhighlighter/scripts/shBrushCss.js"></script>
     <script src="../lib/syntaxhighlighter/scripts/shBrushXml.js"></script>

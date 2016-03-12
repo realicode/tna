@@ -1,0 +1,152 @@
+<title>默认页面</title>
+<link rel="stylesheet" xmlns:th="http://www.thymeleaf.org"
+      th:uri="@{/css/ztree/zTreeStyle.css}" uri="../../../static/css/ztree/zTreeStyle.css"/>
+
+<!-- ajax layout which only needs content area -->
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 widget-container-col">
+                <!-- #section:custom/widget-box -->
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h6 class="widget-title">获取最新开奖数据</h6>
+                        <!-- #section:custom/widget-box.toolbar -->
+                        <div class="widget-toolbar">
+                            <div class="widget-menu">
+
+                                <button class="btn btn-minier btn-warning">开始获取</button>
+                                <a uri="#" data-action="settings" data-toggle="dropdown">
+                                    <i class="ace-icon fa fa-bars"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+                                    <li>
+                                        <a data-toggle="tab" uri="#dropdown1">Option#1</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="tab" uri="#dropdown2">Option#2</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a uri="#" data-action="fullscreen" class="orange2">
+                                <i class="ace-icon fa fa-expand"></i>
+                            </a>
+
+                            <a uri="#" data-action="reload">
+                                <i class="ace-icon fa fa-refresh"></i>
+                            </a>
+
+                            <a uri="#" data-action="collapse">
+                                <i class="ace-icon fa fa-chevron-up"></i>
+                            </a>
+
+                            <a uri="#" data-action="close">
+                                <i class="ace-icon fa fa-times"></i>
+                            </a>
+                        </div>
+
+                        <!-- /section:custom/widget-box.toolbar -->
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <ul>
+                                <li>Unordered List Item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /section:custom/widget-box -->
+            </div>
+            <div class="col-xs-12 col-sm-6 widget-container-col">
+                <!-- #section:custom/widget-box -->
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h5 class="widget-title">获取最新体育比分</h5>
+
+                        <!-- #section:custom/widget-box.toolbar -->
+                        <div class="widget-toolbar">
+                            <div class="widget-menu">
+                                <a uri="#" data-action="settings" data-toggle="dropdown">
+                                    <i class="ace-icon fa fa-bars"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+                                    <li>
+                                        <a data-toggle="tab" uri="#dropdown1">Option#1</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="tab" uri="#dropdown2">Option#2</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a uri="#" data-action="fullscreen" class="orange2">
+                                <i class="ace-icon fa fa-expand"></i>
+                            </a>
+
+                            <a uri="#" data-action="reload">
+                                <i class="ace-icon fa fa-refresh"></i>
+                            </a>
+
+                            <a uri="#" data-action="collapse">
+                                <i class="ace-icon fa fa-chevron-up"></i>
+                            </a>
+
+                            <a uri="#" data-action="close">
+                                <i class="ace-icon fa fa-times"></i>
+                            </a>
+                        </div>
+
+                        <!-- /section:custom/widget-box.toolbar -->
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <p class="alert alert-info">
+                                Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non
+                                consectetur. Nulla fringilla eleifend consectetur.
+                            </p>
+
+                            <p class="alert alert-success">
+                                Raw denim you probably haven't heard of them jean shorts Austin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /section:custom/widget-box -->
+            </div>
+
+        </div>
+
+        <!-- PAGE CONTENT ENDS -->
+    </div>
+    <!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script xmlns:th="http://www.thymeleaf.org" th:inline="javascript">
+    /*<![CDATA[*/
+
+    var scripts = [null, "js/ztree/jquery.ztree.all-3.5.min.js",
+        null]
+    $('.page-content-area').ace_ajax('loadScripts', scripts, function () {
+
+        jQuery(function ($) {
+
+
+        });
+
+
+    });
+    /*]]>*/
+</script>
+
+

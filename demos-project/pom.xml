@@ -8,7 +8,7 @@
     <version>2.0-SNAPSHOT</version>
     <modules>
         <module>demos-parent</module>
-        <module>demos-showcase</module>
+        <module>demos-webshowcase</module>
         <module>demos-bootparent</module>
     </modules>
 

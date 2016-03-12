@@ -248,7 +248,7 @@
             var item = $("<div class='resultitem'></div>"); 
             var itemtitle = $("<div class='title'></div>");
             itemtitle.append("<span class='type'>" + getTypeDesc() + "</span>");
-            itemtitle.append("<span class='name'><a href='" + data.url + "'>" + data.name + "</a></span>");
+            itemtitle.append("<span class='name'><a uri='" + data.url + "'>" + data.name + "</a></span>");
             item.append(itemtitle);
             item.append("<div class='desc'>" + data.desc + "</div>");
             return item;

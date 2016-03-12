@@ -4,12 +4,12 @@
         <blockquote>
             <p>本节主要介绍框架的Ajax 动作（如：删除、导出等）。</p>
         </blockquote>
-        <p><span class="label label-default">DOM示例：</span>　<a href="doc/ajax/myaction.html" data-toggle="dialog" data-id="myaction" data-title="我的ajaxAction" data-width="600" data-height="400">打开ajaxAction演示</a></p>
+        <p><span class="label label-default">DOM示例：</span>　<a uri="doc/ajax/myaction.html" data-toggle="dialog" data-id="myaction" data-title="我的ajaxAction" data-width="600" data-height="400">打开ajaxAction演示</a></p>
         <ul>
             <li><b>doAjax(适用于 <code>删除</code> 等)</b>：
                 <p>DOM示例代码：</p>
                 <pre class="brush: html">
-                    &lt;a type="button" class="btn btn-default" href="ajaxDone3.html" data-toggle="doajax" data-confirm-msg="确定要删除吗？">删除动作&lt;/a>
+                    &lt;a type="button" class="btn btn-default" uri="ajaxDone3.html" data-toggle="doajax" data-confirm-msg="确定要删除吗？">删除动作&lt;/a>
                 </pre>
                 <p>jQuery API:</p>
                 <pre class="brush: js">
@@ -19,7 +19,7 @@
             <li><b>doExport(适用于 <code>导出</code>)</b>：
                 <p>DOM示例代码：</p>
                 <pre class="brush: html">
-                    &lt;a type="button" class="btn btn-default" href="book1.xlsx" data-toggle="doexport" data-confirm-msg="确定要导出吗？">导出数据&lt;/a>
+                    &lt;a type="button" class="btn btn-default" uri="book1.xlsx" data-toggle="doexport" data-confirm-msg="确定要导出吗？">导出数据&lt;/a>
                 </pre>
                 <p>jQuery API:</p>
                 <pre class="brush: js">
@@ -29,7 +29,7 @@
             <li><b>doAjaxChecked(适用于 <code>选中项删除</code> 等)</b>：
                 <p>DOM示例代码：</p>
                 <pre class="brush: html">
-                    &lt;a type="button" class="btn btn-default" href="ajaxDone3.html" data-toggle="doajaxchecked" data-group="delids" data-confirm-msg="确定要删除选中项吗？">批量删除动作&lt;/a>
+                    &lt;a type="button" class="btn btn-default" uri="ajaxDone3.html" data-toggle="doajaxchecked" data-group="delids" data-confirm-msg="确定要删除选中项吗？">批量删除动作&lt;/a>
                 </pre>
                 <p>jQuery API:</p>
                 <pre class="brush: js">
@@ -39,7 +39,7 @@
             <li><b>doExportChecked(适用于 <code>选中项导出</code>)</b>：
                 <p>DOM示例代码：</p>
                 <pre class="brush: html">
-                    &lt;a type="button" class="btn btn-default" href="ajaxDone3.html" data-toggle="doexportchecked" data-confirm-msg="确定要导出选中项吗？">批量导出&lt;/a>
+                    &lt;a type="button" class="btn btn-default" uri="ajaxDone3.html" data-toggle="doexportchecked" data-confirm-msg="确定要导出选中项吗？">批量导出&lt;/a>
                 </pre>
                 <p>jQuery API:</p>
                 <pre class="brush: js">

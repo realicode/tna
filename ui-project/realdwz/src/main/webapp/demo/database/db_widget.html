@@ -9,7 +9,7 @@
 				<input id="inputOrg1" name="org1.id" value="" type="hidden"/>
 				<input class="required" name="org1.orgName" type="text" postField="keyword" suggestFields="orgNum,orgName" 
 					suggestUrl="demo/database/db_lookupSuggest.html" lookupGroup="org1"/>
-				<a class="btnLook" href="demo/database/dwzOrgLookup.html" lookupGroup="org1">查找带回</a>	
+				<a class="btnLook" uri="demo/database/dwzOrgLookup.html" lookupGroup="org1">查找带回</a>
 				<span class="info">(suggest+lookup)</span>
 			</dd>
 		</dl>
@@ -26,7 +26,7 @@
 				<input name="org1_1.id" value="" type="hidden"/>
 				<input class="required" name="org1_1.orgName" type="text" suggestFields="orgNum,orgName" 
 					suggestUrl="demo/database/db_lookupSuggest.html?orgId={inputOrg1}" warn="请选择部门A1" lookupGroup="org1_1"/>
-				<a class="btnLook" href="demo/database/dwzOrgLookup.html?orgId={inputOrg1}" warn="请选择部门A1" lookupGroup="org1_1">查找带回</a>		
+				<a class="btnLook" uri="demo/database/dwzOrgLookup.html?orgId={inputOrg1}" warn="请选择部门A1" lookupGroup="org1_1">查找带回</a>
 				<span class="info">(suggest、lookup 联动效果)</span>
 			</dd>
 		</dl>
@@ -48,7 +48,7 @@
 			<dd>
 				<input name="org3.id" value="" type="hidden">
 				<input name="org3.orgName" type="text"/>
-				<a class="btnLook" href="demo/database/dwzOrgLookup2.html" lookupGroup="org3">查找带回</a>
+				<a class="btnLook" uri="demo/database/dwzOrgLookup2.html" lookupGroup="org3">查找带回</a>
 				<span class="info">(lookup 通过复选框选择多个值查找回带)</span>
 			</dd>
 		</dl>
@@ -65,7 +65,7 @@
 			<dd>
 				<input name="org.id[]" value="1" type="hidden"/>
 				<input class="required" name="org.orgName[]" value="技术部" type="text" suggestFields="orgNum,orgName" suggestUrl="demo/database/db_lookupSuggest.html" lookupGroup="org" suffix="[]"/>
-				<a class="btnLook" href="demo/database/dwzOrgLookup.html" lookupGroup="org" suffix="[]">查找带回</a>		
+				<a class="btnLook" uri="demo/database/dwzOrgLookup.html" lookupGroup="org" suffix="[]">查找带回</a>
 				<span class="info">需要suffix="[]"属性，下标一般用于主从结构子表</span>
 			</dd>
 		</dl>
@@ -76,7 +76,7 @@
 			<dd>
 				<input name="org[].id" value="1" type="hidden"/>
 				<input class="required" name="org[].orgName" value="技术部" type="text" suggestFields="orgNum,orgName" suggestUrl="demo/database/db_lookupSuggest.html" lookupGroup="org[]"/>
-				<a class="btnLook" href="demo/database/dwzOrgLookup.html" lookupGroup="org[]">查找带回</a>		
+				<a class="btnLook" uri="demo/database/dwzOrgLookup.html" lookupGroup="org[]">查找带回</a>
 				<span class="info">不需要suffix="[]"属性，lookupGroup属性中加上方括号[]</span>
 			</dd>
 		</dl>
@@ -87,7 +87,7 @@
 			<dd>
 				<input name="obj.orgNum" value="" type="hidden"/>
 				<input class="required" name="obj.orgName" type="text" suggestFields="orgNum,orgName" suggestUrl="demo/database/db_lookupSuggest.html" lookupGroup="obj" lookupPk="orgNum"/>
-				<a class="btnLook" href="demo/database/dwzOrgLookup.html" lookupGroup="obj" lookupPk="orgNum">查找带回</a>	
+				<a class="btnLook" uri="demo/database/dwzOrgLookup.html" lookupGroup="obj" lookupPk="orgNum">查找带回</a>
 				<span class="info">自定义lookup主键，只需添加lookupPk="xxx"属性（lookupPk默认值为id）</span>
 			</dd>
 		</dl>
@@ -99,7 +99,7 @@
 			<dd>
 				<input name="attachment.id" value="" type="hidden">
 				<input class="readonly" name="attachment.fileName" value="" readonly="readonly" type="text"/>
-				<a class="btnAttach" href="demo/database/db_attachmentLookup.html" lookupGroup="attachment" width="560" height="300" title="附件">附件</a>
+				<a class="btnAttach" uri="demo/database/db_attachmentLookup.html" lookupGroup="attachment" width="560" height="300" title="附件">附件</a>
 				<span class="info">(lookup附件)</span>
 			</dd>
 		</dl>
@@ -110,9 +110,9 @@
 			<div class="tabsHeader">
 				<div class="tabsHeaderContent">
 					<ul>
-						<li class="selected"><a href="javascript:void(0)"><span>从表1【Struts2 示例】</span></a></li>
-						<li><a href="javascript:void(0)"><span>从表2【PHP 示例 - 结尾带下标[#index#]】</span></a></li>
-						<li><a href="javascript:void(0)"><span>从表2【PHP 示例 - 结尾带下标[]】</span></a></li>
+						<li class="selected"><a uri="javascript:void(0)"><span>从表1【Struts2 示例】</span></a></li>
+						<li><a uri="javascript:void(0)"><span>从表2【PHP 示例 - 结尾带下标[#index#]】</span></a></li>
+						<li><a uri="javascript:void(0)"><span>从表2【PHP 示例 - 结尾带下标[]】</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -138,17 +138,17 @@
 								<td><input type="text" name="items[0].itemInt" value="1" size="12" class="digits textInput"></td>
 								<td><input type="text" name="items[0].itemFloat" value="0.8" size="12" class="number textInput"></td>
 								<td><input type="text" name="items[0].itemDate" value="2011-12-28" class="date  textInput" datefmt="yyyy-MM-dd" size="12">
-									<a class="inputDateButton" href="javascript:void(0)">选择</a></td>
-								<td><input type="text" name="items[0].itemDataTime" value="" class="date  textInput" datefmt="yyyy-MM-dd" size="16"><a class="inputDateButton" href="javascript:void(0)">选择</a></td>
-								<td><input type="hidden" name="items[0].org.id"><input type="text" name="items[0].org.orgName" autocomplete="off" lookupgroup="items[0].org" suggesturl="demo/database/db_lookupSuggest.html" suggestfields="orgName" postfield="keywords" lookuppk="id" size="12" class="required textInput"><a class="btnLook" href="demo/database/dwzOrgLookup.html" lookupgroup="items[0].org" autocomplete="off" suggesturl="demo/database/db_lookupSuggest.html" suggestfields="orgName" postfield="keywords" lookuppk="id" title="查找带回">查找带回</a></td>
+									<a class="inputDateButton" uri="javascript:void(0)">选择</a></td>
+								<td><input type="text" name="items[0].itemDataTime" value="" class="date  textInput" datefmt="yyyy-MM-dd" size="16"><a class="inputDateButton" uri="javascript:void(0)">选择</a></td>
+								<td><input type="hidden" name="items[0].org.id"><input type="text" name="items[0].org.orgName" autocomplete="off" lookupgroup="items[0].org" suggesturl="demo/database/db_lookupSuggest.html" suggestfields="orgName" postfield="keywords" lookuppk="id" size="12" class="required textInput"><a class="btnLook" uri="demo/database/dwzOrgLookup.html" lookupgroup="items[0].org" autocomplete="off" suggesturl="demo/database/db_lookupSuggest.html" suggestfields="orgName" postfield="keywords" lookuppk="id" title="查找带回">查找带回</a></td>
 								<td>
 									<select class="combox" name="${param.inputName}">
 										<option value="Yes">是</option>
 										<option value="No">否</option>
 									</select>
 								</td>
-								<td><input type="hidden" name="items[0].attachment.id"><input type="text" name="items[0].attachment.fileName" size="12" readonly="readonly" class="textInput readonly"><a class="btnAttach" href="demo/database/db_attachmentLookup.html" lookupgroup="items[0].attachment" lookuppk="id" width="560" height="300" title="查找带回">查找带回</a></td>
-								<td><a href="javascript:void(0)" class="btnDel ">删除</a></td>
+								<td><input type="hidden" name="items[0].attachment.id"><input type="text" name="items[0].attachment.fileName" size="12" readonly="readonly" class="textInput readonly"><a class="btnAttach" uri="demo/database/db_attachmentLookup.html" lookupgroup="items[0].attachment" lookuppk="id" width="560" height="300" title="查找带回">查找带回</a></td>
+								<td><a uri="javascript:void(0)" class="btnDel ">删除</a></td>
 							</tr>
 						</tbody>
 					</table>

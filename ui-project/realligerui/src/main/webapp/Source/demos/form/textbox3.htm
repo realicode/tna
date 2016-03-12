@@ -1,50 +1,50 @@
 <html>
 <head>
     <title></title>
-    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link uri="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
     <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
     <script src="../../lib/ligerUI/js/plugins/ligerTextBox.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function ()
         {
-            //ÎÒÃÇ½«Ò»¸öhtmlÎÄ±¾¿ò¶ÔÏó×ª»»³ÉligeruiÎÄ±¾¿ò¶ÔÏó,²¢·µ»Øligerui¶ÔÏó
+            //ï¿½ï¿½ï¿½Ç½ï¿½Ò»ï¿½ï¿½htmlï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ligeruiï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ligeruiï¿½ï¿½ï¿½ï¿½
             var g = $("#txt1").ligerTextBox(
             {
-                //Èç¹ûÃ»ÓÐÊäÈëÊ±,»áÌáÊ¾²»ÄÜÎª¿Õ
-                nullText: '²»ÄÜÎª¿Õ'
+                //ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±,ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
+                nullText: 'ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½'
             });
 
             /*
-            ÈçºÎ»ñÈ¡ÊôÐÔ
+            ï¿½ï¿½Î»ï¿½È¡ï¿½ï¿½ï¿½ï¿½
             */
-            //·½Ê½Ò»
-            alert('·½Ê½Ò»:' + g.get('disabled'));
-            //·½Ê½¶þ
-            alert('·½Ê½¶þ:' + $("#txt1").ligerTextBox('option', 'disabled'));
+            //ï¿½ï¿½Ê½Ò»
+            alert('ï¿½ï¿½Ê½Ò»:' + g.get('disabled'));
+            //ï¿½ï¿½Ê½ï¿½ï¿½
+            alert('ï¿½ï¿½Ê½ï¿½ï¿½:' + $("#txt1").ligerTextBox('option', 'disabled'));
 
              
             /*
-            ÈçºÎÉèÖÃÊôÐÔ
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             */
-            //·½Ê½Ò»
+            //ï¿½ï¿½Ê½Ò»
             g.set('disabled', true);
-            //·½Ê½¶þ 
+            //ï¿½ï¿½Ê½ï¿½ï¿½ 
             $("#txt1").ligerTextBox('option', 'disabled', false);
 
             /*
-            ÈçºÎµ÷ÓÃ·½·¨
+            ï¿½ï¿½Îµï¿½ï¿½Ã·ï¿½ï¿½ï¿½
             */
-            //·½Ê½Ò»
+            //ï¿½ï¿½Ê½Ò»
             g.setDisabled();
-            //·½Ê½¶þ 
+            //ï¿½ï¿½Ê½ï¿½ï¿½ 
             $("#txt1").ligerTextBox('setEnabled');
              
             /*
-            ÈçºÎÉèÖÃÊÂ¼þ
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
             */
-            //ÕâÀï¸øÎÄ±¾¿ò°ó¶¨Ò»¸ö¸Ä±äÖµµÄÊÂ¼þ
-            //Ò²¿ÉÒÔÉèÖÃonChangeValue²ÎÊý
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä±ï¿½Öµï¿½ï¿½ï¿½Â¼ï¿½
+            //Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½onChangeValueï¿½ï¿½ï¿½ï¿½
             g.bind('changeValue', function (value)
             {
                 alert(value);

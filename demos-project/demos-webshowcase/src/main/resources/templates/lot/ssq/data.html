@@ -1,0 +1,806 @@
+<title>双色球</title>
+<link rel="stylesheet" xmlns:th="http://www.thymeleaf.org"
+      th:uri="@{/css/datetime/daterangepicker-bs3.css}"
+      uri="../../../static/css/datetime/daterangepicker-bs3.css"/>
+<style>
+    /* some elements used in demo only */
+    .spinner-preview {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .dropdown-preview {
+        margin: 0 5px;
+        display: inline-block;
+    }
+
+    .dropdown-preview > .dropdown-menu {
+        display: block;
+        position: static;
+        margin-bottom: 5px;
+    }
+</style>
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <h5>
+                双色球页面
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    历史开奖数据数据
+
+                </small>
+            </h5>
+        </div>
+
+        <div class="col-sm-2">
+            <!-- #section:plugins/date-time.daterangepicker -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar bigger-110"></i>
+				</span>
+                <input class="form-control" type="text" name="myDataRangePicker"
+                       id="id-date-range-picker-1"/>
+            </div>
+
+            <!-- /section:plugins/date-time.daterangepicker -->
+        </div>
+    </div>
+
+</div><!-- /.page-header -->
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- #section:elements.tab -->
+                <div class="tabbable">
+                    <ul class="nav nav-tabs" id="ssqTab">
+                        <li class="active" id="ssqHomeDataLi">
+                            <a data-toggle="tab" uri="#home">
+                                <i class="green ace-icon fa fa-home bigger-120"></i>
+                                历史数据展示
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" uri="#drawNumchartsContainer">
+                                开奖号码走势
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" uri="#charts">
+                                和值走势
+                                <span class="badge badge-danger">4</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" uri="#">
+                                Dropdown &nbsp;
+                                <i class="ace-icon fa fa-caret-down bigger-110 width-auto"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-info">
+                                <li>
+                                    <a data-toggle="tab" uri="#dropdown1">@fat</a>
+                                </li>
+
+                                <li>
+                                    <a data-toggle="tab" uri="#dropdown2">@mdo</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="clearfix">
+                                        <div class="pull-right tableTools-container"></div>
+                                    </div>
+                                    <div class="table-header">
+                                        Results for "Latest Registered Domains"
+                                    </div>
+
+                                    <!-- div.table-responsive -->
+
+                                    <!-- div.dataTables_borderWrap -->
+                                    <div>
+                                        <table id="realtable" class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th rowspan="2" class="center">
+                                                    <label class="pos-rel">
+                                                        <input type="checkbox" class="ace"/>
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </th>
+                                                <th rowspan="2">开奖期数</th>
+                                                <th colspan="6">红球</th>
+                                                <th>蓝球</th>
+                                                <th rowspan="2">操作</th>
+                                            </tr>
+                                            <tr>
+                                                <th>1</th>
+                                                <th>2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>1</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="charts" class="tab-pane fade">
+                            <div id="chartTest" class="col-xs-9" style="min-width:1000px;height:800px;"></div>
+
+                        </div>
+                        <div id="drawNumchartsContainer" class="tab-pane fade">
+                            <div id="drawNumcharts" style="min-width:1000px;height:800px;"></div>
+
+                        </div>
+
+                        <div id="dropdown1" class="tab-pane fade">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's
+                                organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                        </div>
+
+                        <div id="dropdown2" class="tab-pane fade">
+                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold
+                                out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack
+                                portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /section:elements.tab -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <div class="space"></div>
+
+
+        <script type="text/javascript">
+            var $path_assets = "../../assets";//this will be used in gritter alerts containing images
+        </script>
+
+        <!-- PAGE CONTENT ENDS -->
+    </div>
+    <!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script xmlns:th="http://www.thymeleaf.org" th:inline="javascript">
+    /*<![CDATA[*/
+    var scripts = [null, "js/dataTables/jquery.dataTables.min.js",
+        "js/dataTables/jquery.dataTables.bootstrap.min.js",
+        "js/dataTables/extensions/TableTools/js/dataTables.tableTools.min.js",
+        "js/dataTables/extensions/ColVis/js/dataTables.colVis.min.js",
+        "js/hcharts/highstock.js",
+        "js/datetime/moment.min.js",
+        "js/datetime/daterangepicker.js",
+        "js/datetime/locale/zh-cn.js",
+        null]
+    $('.page-content-area').ace_ajax('loadScripts', scripts, function () {
+        //inline scripts related to this page
+        var ssqtable;
+
+        jQuery(function ($) {
+            $('#ssqTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                //if($(e.target).attr('uri') == "#home") doSomethingNow();
+                console.log(e.target.getAttribute("uri"));
+                console.log(e.target.getAttribute("uri"));
+            })
+
+            $.fn.spin = function (opts) {
+                this.each(function () {
+                    var $this = $(this),
+                            data = $this.data();
+
+                    if (data.spinner) {
+                        data.spinner.stop();
+                        delete data.spinner;
+                    }
+                    if (opts !== false) {
+                        data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
+                    }
+                });
+                return this;
+            };
+
+            ssqtable = $('#realtable').DataTable({
+
+                bAutoWidth: false,
+                ordering: false,
+                ajax: {
+                    url: "api/lot/ssq/top"
+                },
+                serverSide: true,
+                columns: [
+                    {
+                        "data": null, "width": "5%",
+                        render: function (data, type, row) {
+                            if (type === 'display') {
+                                return '<label class="pos-rel"><input type="checkbox" class="ace"/>' +
+                                        '<span class = "lbl" > </span > </label > ';
+                            }
+                            return data;
+                        }
+                    },
+                    {"data": "periods", "width": "5%"},
+                    {"data": "redA"},
+                    {"data": "redB"},
+                    {"data": "redC"},
+                    {"data": "redD"},
+                    {"data": "redE"},
+                    {"data": "redF"},
+                    {"data": "blueA"},
+                    {
+                        "data": null,
+                        "defaultContent": "<div class='hidden-sm hidden-xs btn-group'><button class='btn btn-xs btn-success'>" +
+                        "<i class='ace-icon fa fa-check bigger-120'></i></button><button class='btn btn-xs btn-info'>" +
+                        "<i class='ace-icon fa fa-pencil bigger-120'></i></button><button class='btn btn-xs btn-danger'>" +
+                        "<i class='ace-icon fa fa-trash-o bigger-120'></i></button> <button class='btn btn-xs btn-warning'>" +
+                        "<i class='ace-icon fa fa-flag bigger-120'></i></button></div>"
+                    }
+
+                ],
+
+                "language": {
+                    "lengthMenu": "_MENU_ 条记录每页",
+                    "zeroRecords": "没有找到记录",
+                    "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 )",
+                    "infoEmpty": "无记录",
+                    "infoFiltered": "(从 _MAX_ 条记录过滤)",
+                    "paginate": {
+                        "previous": "上一页",
+                        "next": "下一页"
+                    }
+                },
+                "dom": "<'row'<'col-xs-2'l><'#mytool.col-xs-4'><'col-xs-6'f>r>" +
+                "t" +
+                "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+
+            });
+
+            //table checkboxes
+            $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+
+            //TableTools settings
+            TableTools.classes.container = "btn-group btn-overlap";
+            TableTools.classes.print = {
+                "body": "DTTT_Print",
+                "info": "tableTools-alert gritter-item-wrapper gritter-info gritter-center white",
+                "message": "tableTools-print-navbar"
+            }
+
+            //initiate TableTools extension
+            var tableTools_obj = new $.fn.dataTable.TableTools(ssqtable, {
+                "sSwfPath": "js/dataTables/extensions/TableTools/swf/copy_csv_xls_pdf.swf", //in Ace demo ../../assets will be replaced by correct assets path
+
+                "sRowSelector": "td:not(:last-child)",
+                "sRowSelect": "multi",
+                "fnRowSelected": function (row) {
+                    //check checkbox when row is selected
+                    try {
+                        $(row).find('input[type=checkbox]').get(0).checked = true
+                    }
+                    catch (e) {
+                    }
+                },
+                "fnRowDeselected": function (row) {
+                    //uncheck checkbox
+                    try {
+                        $(row).find('input[type=checkbox]').get(0).checked = false
+                    }
+                    catch (e) {
+                    }
+                },
+
+                "sSelectedClass": "success",
+                "aButtons": [
+                    {
+                        "sExtends": "copy",
+                        "sToolTip": "Copy to clipboard",
+                        "sButtonClass": "btn btn-white btn-primary btn-bold",
+                        "sButtonText": "<i class='fa fa-copy bigger-110 pink'></i>",
+                        "fnComplete": function () {
+                            this.fnInfo('<h3 class="no-margin-top smaller">Table copied</h3>\
+							<p>Copied ' + (oTable1.fnSettings().fnRecordsTotal()) + ' row(s) to the clipboard.</p>',
+                                    1500
+                            );
+                        }
+                    },
+
+                    {
+                        "sExtends": "csv",
+                        "sToolTip": "Export to CSV",
+                        "sButtonClass": "btn btn-white btn-primary  btn-bold",
+                        "sButtonText": "<i class='fa fa-file-excel-o bigger-110 green'></i>"
+                    },
+
+                    {
+                        "sExtends": "pdf",
+                        "sToolTip": "Export to PDF",
+                        "sButtonClass": "btn btn-white btn-primary  btn-bold",
+                        "sButtonText": "<i class='fa fa-file-pdf-o bigger-110 red'></i>"
+                    },
+
+                    {
+                        "sExtends": "print",
+                        "sToolTip": "Print view",
+                        "sButtonClass": "btn btn-white btn-primary  btn-bold",
+                        "sButtonText": "<i class='fa fa-print bigger-110 grey'></i>",
+
+                        "sMessage": "<div class='navbar navbar-default'><div class='navbar-header pull-left'><a class='navbar-brand' uri='#'><small>Optional Navbar &amp; Text</small></a></div></div>",
+
+                        "sInfo": "<h3 class='no-margin-top'>Print view</h3>\
+							  <p>Please use your browser's print function to\
+							  print this table.\
+							  <br />Press <b>escape</b> when finished.</p>",
+                    }
+                ]
+            });
+            //we put a container before our table and append TableTools element to it
+            $(tableTools_obj.fnContainer()).appendTo($('.tableTools-container'));
+
+            //also add tooltips to table tools buttons
+            //addding tooltips directly to "A" buttons results in buttons disappearing (weired! don't know why!)
+            //so we add tooltips to the "DIV" child after it becomes inserted
+            //flash objects inside table tools buttons are inserted with some delay (100ms) (for some reason)
+            setTimeout(function () {
+                $(tableTools_obj.fnContainer()).find('a.DTTT_button').each(function () {
+                    var div = $(this).find('> div');
+                    if (div.length > 0) div.tooltip({container: 'body'});
+                    else $(this).tooltip({container: 'body'});
+                });
+            }, 200);
+
+
+            //select/deselect all rows according to table header checkbox
+            $('#realtable > thead > tr > th input[type=checkbox]').eq(0).on('click', function () {
+                var th_checked = this.checked;//checkbox inside "TH" table header
+
+                $(this).closest('table').find('tbody > tr').each(function () {
+                    var row = this;
+                    if (th_checked) tableTools_obj.fnSelect(row);
+                    else tableTools_obj.fnDeselect(row);
+                });
+            });
+
+            //select/deselect a row when the checkbox is checked/unchecked
+            $('#realtable').on('click', 'td input[type=checkbox]', function () {
+                var row = $(this).closest('tr').get(0);
+                if (!this.checked) tableTools_obj.fnSelect(row);
+                else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+
+                var data = ssqtable.row($(this).parents('tr')).data();
+                alert(data[1] + "'s salary is: " + data[5]);
+            });
+
+            $('#realtable tbody').on('click', 'button', function () {
+                var tempData = ssqtable.row($(this).parents('tr')).data();
+                console.log(tempData);
+
+                console.log(tempData.id);
+            });
+
+            /*$('#realtable tbody').on('click', 'tr', function () {
+             console.log(ssqtable.row(this).data());
+             });*/
+            //table
+            Highcharts.setOptions({global: {useUTC: false}});
+            var hchartsCategories = [];
+            var hchartsOptions = {
+                chart: {
+                    renderTo: 'chartTest',
+                    type: 'spline'
+                },
+                title: {
+                    text: '和值移动平均线'
+                },
+                subtitle: {
+                    text: '可以选择某一个时间段'
+                },
+                xAxis: {
+                    type: 'categories',
+                    categories: hchartsCategories,
+                },
+                yAxis: {
+                    title: {
+                        text: '和值'
+                    },
+                    min: 0,
+                    minorGridLineWidth: 0,
+                    gridLineWidth: 0,
+                    alternateGridColor: null,
+
+                },
+                tooltip: {
+                    valueSuffix: ' m/s'
+                },
+                plotOptions: {
+                    spline: {
+                        lineWidth: 2,
+                        states: {
+                            hover: {
+                                lineWidth: 4
+                            }
+                        },
+                        marker: {
+                            enabled: false
+                        },
+                        pointInterval: 1, // one hour
+                        pointStart: 1
+                    }
+                },
+                series: [{
+                    name: 'MA5',
+                    data: [4.3, 5.1, 4.3, 5.2, 5.4, 4.7, 3.5, 4.1, 5.6, 7.4, 6.9, 7.1,
+                        7.9, 7.9, 7.5, 6.7, 7.7, 7.7, 7.4, 7.0, 7.1, 5.8, 5.9, 7.4,
+                        8.2, 8.5, 9.4, 8.1, 10.9, 10.4, 10.9, 12.4, 12.1, 9.5, 7.5,
+                        7.1, 7.5, 8.1, 6.8, 3.4, 2.1, 1.9, 2.8, 2.9, 1.3, 4.4, 4.2,
+                        3.0, 3.0]
+
+                }, {
+                    name: 'MA7',
+                    data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.3, 0.0,
+                        0.0, 0.4, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                        0.0, 0.6, 1.2, 1.7, 0.7, 2.9, 4.1, 2.6, 3.7, 3.9, 1.7, 2.3,
+                        3.0, 3.3, 4.8, 5.0, 4.8, 5.0, 3.2, 2.0, 0.9, 0.4, 0.3, 0.5, 0.4]
+                }],
+                navigation: {
+                    menuItemStyle: {
+                        fontSize: '10px'
+                    }
+                }
+            };
+
+
+            var sdataori = [];
+            var sdata5 = [];
+            var sdata7 = [];
+            var sdata10 = [];
+            var sdata15 = [];
+            var sdata20 = [];
+            var sdata30 = [];
+            var sdata60 = [];
+
+
+            var hchartsStockOptions = {
+                legend: {enabled: true},
+                global: {useUTC: false},
+                chart: {
+                    renderTo: 'chartTest',//指向的div的id属性
+                    zoomType: 'xy'
+                },
+                exporting: {
+                    enabled: false //是否能导出趋势图图片
+                },
+                title: {
+                    text: '和值移动平均线'//图表标题
+                },
+                yAxis: {
+                    tickPixelInterval: 5,
+                    plotOptions: {
+                        line: {
+                            dataGrouping: {
+                                enabled: false
+                            }
+                        }
+                    },
+                    min: 80,
+                    max: 130
+                },
+                xAxis: {
+                    //  title :{
+                    //      text:"title"
+                    //  },
+                    type: 'date', //定义x轴上日期的显示格式
+                    labels: {
+                        formatter: function () {
+                            var vDate = new Date(this.value);
+                            //alert(this.value);
+                            return vDate.getFullYear() + "-" + (vDate.getMonth() + 1) + "-" + vDate.getDate();
+                        },
+                        align: 'center'
+                    },
+                    /*// 如果X轴刻度是日期或时间，该配置是格式化日期及时间显示格式
+                     dateTimeLabelFormats: {
+                     second: '%Y-%m-%d<br/>%H:%M:%S',
+                     minute: '%Y-%m-%d<br/>%H:%M',
+                     hour: '%Y-%m-%d<br/>%H:%M',
+                     day: '%Y<br/>%m-%d',
+                     week: '%Y<br/>%m-%d',
+                     month: '%Y-%m',
+                     year: '%Y'
+                     }*/
+                },
+                lang: {
+                    months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    shortMonths: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一', '十二'],
+                    weekdays: ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+                    exportButtonTitle: '导出PDF',
+                    printButtonTitle: '打印报表'
+                },
+                rangeSelector: {
+                    // 缩放选择按钮，是一个数组。
+                    // 其中type可以是： 'millisecond', 'second', 'minute', 'day', 'week', 'month', 'ytd' (year to date), 'year' 和 'all'。
+                    // 其中count是指多少个单位type。
+                    // 其中text是配置显示在按钮上的文字
+                    buttons: [{
+                        type: 'month',
+                        count: 1,
+                        text: '1月'
+                    }, {
+                        type: 'month',
+                        count: 3,
+                        text: '3月'
+                    }, {
+                        type: 'month',
+                        count: 6,
+                        text: '6月'
+                    }, {
+                        type: 'year',
+                        count: 1,
+                        text: '1年'
+                    }, {
+                        type: 'year',
+                        count: 3,
+                        text: '3年'
+                    }, {
+                        type: 'all',
+                        text: '所有'
+                    }],
+                    // 默认选择域：0（缩放按钮中的第一个）、1（缩放按钮中的第二个）……
+                    selected: 1,
+                    // 是否允许input标签选框
+                    inputEnabled: false
+                },
+
+                tooltip: {xDateFormat: '%Y-%m-%d, %A'},
+                series: [{
+                    type: 'spline',
+                    name: 'sum',//鼠标移到趋势线上时显示的属性名
+                    data: sdataori//属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA5',//鼠标移到趋势线上时显示的属性名
+                    data: sdata5//属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA7',//鼠标移到趋势线上时显示的属性名
+                    data: sdata7//属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA10',//鼠标移到趋势线上时显示的属性名
+                    data: sdata10 //属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA15',//鼠标移到趋势线上时显示的属性名
+                    data: sdata15 //性值
+                }, {
+                    type: 'spline',
+                    name: 'MA20', //鼠标移到趋势线上时显示的属性名
+                    data: sdata20 //属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA30', //鼠标移到趋势线上时显示的属性名
+                    data: sdata30 //属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA60', //鼠标移到趋势线上时显示的属性名
+                    data: sdata60 //属性值
+                }]
+            };
+
+            $.getJSON("http://127.0.0.1:18080/tna/api/lot/ssq/ana/" +
+                    "sum", function (json) {
+
+                for (var i = 0; i < json.length; i++) {
+
+                    sdataori.push([json[i]['kjDate'], json[i]['ballsSum']]);
+                    sdata5.push([json[i]['kjDate'], json[i]['anaMA5']]);
+                    sdata7.push([json[i]['kjDate'], json[i]['anaMA7']]);
+                    sdata10.push([json[i]['kjDate'], json[i]['anaMA10']]);
+                    sdata15.push([json[i]['kjDate'], json[i]['anaMA15']]);
+                    sdata20.push([json[i]['kjDate'], json[i]['anaMA20']]);
+                    sdata30.push([json[i]['kjDate'], json[i]['anaMA30']]);
+                    sdata60.push([json[i]['kjDate'], json[i]['anaMA60']]);
+
+//                            console.log(sdata1[i][0] + " : " + sdata1[i][1] + " : " + sdata2[i][1]);
+                }
+                $('#chartTest').highcharts('StockChart', hchartsStockOptions);
+
+            });
+
+            //每一个数字的图表
+            var dnSdata5 = [];
+            var dnSdata7 = [];
+            var dnSdata10 = [];
+            var dnSdata15 = [];
+            var dnSdata20 = [];
+            var dnSdata30 = [];
+            var dnSdata60 = [];
+            var dnSdata180 = [];
+            var dnSdata360 = [];
+
+            var drawNumchartsOptions = {
+                legend: {enabled: true},
+                global: {useUTC: false},
+                chart: {
+                    renderTo: 'drawNumcharts',//指向的div的id属性
+                    zoomType: 'xy'
+                },
+                exporting: {
+                    enabled: false //是否能导出趋势图图片
+                },
+                title: {
+                    text: '单个号码走势'//图表标题
+                },
+                yAxis: {
+                    tickPixelInterval: 0.01,
+                    plotOptions: {
+                        line: {
+                            dataGrouping: {
+                                enabled: false
+                            }
+                        }
+                    },
+                },
+                xAxis: {
+                    //  title :{
+                    //      text:"title"
+                    //  },
+                    type: 'date', //定义x轴上日期的显示格式
+                    labels: {
+                        formatter: function () {
+                            var vDate = new Date(this.value);
+                            //alert(this.value);
+                            return vDate.getFullYear() + "-" + (vDate.getMonth() + 1) + "-" + vDate.getDate();
+                        },
+                        align: 'center'
+                    },
+
+                },
+                rangeSelector: {
+                    buttons: [{
+                        type: 'month',
+                        count: 1,
+                        text: '1月'
+                    }, {
+                        type: 'month',
+                        count: 3,
+                        text: '3月'
+                    }, {
+                        type: 'month',
+                        count: 6,
+                        text: '6月'
+                    }, {
+                        type: 'year',
+                        count: 1,
+                        text: '1年'
+                    }, {
+                        type: 'year',
+                        count: 3,
+                        text: '3年'
+                    }, {
+                        type: 'all',
+                        text: '所有'
+                    }],
+                    // 默认选择域：0（缩放按钮中的第一个）、1（缩放按钮中的第二个）……
+                    selected: 4,
+                    // 是否允许input标签选框
+                    inputEnabled: false
+                },
+
+                tooltip: {xDateFormat: '%Y-%m-%d, %A'},
+                series: [{
+                    type: 'spline',
+                    name: 'MA60', //鼠标移到趋势线上时显示的属性名
+                    data: dnSdata60 //属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA180', //鼠标移到趋势线上时显示的属性名
+                    data: dnSdata180 //属性值
+                }, {
+                    type: 'spline',
+                    name: 'MA360', //鼠标移到趋势线上时显示的属性名
+                    data: dnSdata360 //属性值
+                }]
+            };
+
+
+            $.getJSON("http://127.0.0.1:18080/tna/api/lot/ssq/ana/freq" + "?" +
+                    "ballNum=" + "16" + "&" + "ballType=" + "2", function (json) {
+
+                for (var i = 0; i < json.length; i++) {
+
+                    dnSdata30.push([json[i]['kjDate'], json[i]['anaMA30']]);
+                    dnSdata60.push([json[i]['kjDate'], json[i]['anaMA60']]);
+                    dnSdata180.push([json[i]['kjDate'], json[i]['anaMA180']]);
+                    dnSdata360.push([json[i]['kjDate'], json[i]['anaMA360']]);
+
+//                            console.log(sdata1[i][0] + " : " + sdata1[i][1] + " : " + sdata2[i][1]);
+                }
+                $('#drawNumcharts').highcharts('StockChart', drawNumchartsOptions);
+
+            });
+
+            $('input[name="myDataRangePicker"]').daterangepicker({
+                format: 'YYYY/MM/DD',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                ranges: {
+                    '今天': [moment(), moment()],
+                    '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    '过去的一周': [moment().subtract(6, 'days'), moment()],
+                    '过去的一个月': [moment().subtract(29, 'days'), moment()],
+                    '本月': [moment().startOf('month'), moment().endOf('month')],
+                    '上个月': [moment().subtract(1, 'month').startOf('month'),
+                        moment().subtract(1, 'month').endOf('month'),]
+                },
+                locale: {
+                    applyLabel: '选择',
+                    cancelLabel: '取消',
+                    fromLabel: '起始日期',
+                    toLabel: '截止日期',
+                    customRangeLabel: '自定义',
+                }
+            }, function (start, end, label) {
+                console.log(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'), label);
+                console.log($("ul#ssqTab li.active").attr('id'));
+                if ($("ul#ssqTab li.active").attr('id') == "ssqHomeDataLi") {
+                    var newUrl = "api/lot/ssq/data" + "?" + "startDate=" +
+                            start.format('YYYY-MM-DD')
+                            + "&" + "endDate=" + end.format('YYYY-MM-DD');
+                    console.log(newUrl);
+                    ssqtable.ajax.url(newUrl).load();
+                }
+                else {
+                }
+
+
+                //ssqtable.reload();
+                /*$.ajax({
+                 type: "GET",
+                 url: "api/lot/ssq/data" + "?" + "startDate=" +
+                 start.format('YYYY-MM-DD')
+                 + "&" + "endDate=" + end.format('YYYY-MM-DD'),
+                 success: function (text) {
+                 console.log(text);
+                 }
+
+                 ,
+                 error: function (xhr) {
+                 console.log(xhr.responseText);
+
+                 }
+                 });*/
+
+            });
+        });
+    })
+    ;
+    /*]]>*/
+</script>

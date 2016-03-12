@@ -8,18 +8,18 @@
     <div class="bjui-doc">
         <h3 class="page-header">第三方插件：Kindeditor —— html编辑器</h3>
         <blockquote>
-            <p>本节主要介绍在线HTML编辑器 - Kindeditor，插件地址：<a href="http://kindeditor.net/" target="_blank">http://kindeditor.net/</a>。</p>
+            <p>本节主要介绍在线HTML编辑器 - Kindeditor，插件地址：<a uri="http://kindeditor.net/" target="_blank">http://kindeditor.net/</a>。</p>
         </blockquote>
         <h4>初始化</h4>
         <ul>
             <li>Data属性：textarea添加属性<code>data-toggle="kindeditor"</code>后即可触发。<br>
-                <br><span class="label label-default">DOM示例：</span>　<a href="doc/plugin/myeditor.html" data-toggle="dialog" data-id="myeditor" data-title="我的Kindeditor页面" data-width="800" data-height="400">打开测试页面</a><br>
+                <br><span class="label label-default">DOM示例：</span>　<a uri="doc/plugin/myeditor.html" data-toggle="dialog" data-id="myeditor" data-title="我的Kindeditor页面" data-width="800" data-height="400">打开测试页面</a><br>
                 <p>示例代码：</p>
                 <pre class="brush: html">
                     &lt;textarea data-toggle="kindeditor" data-items="fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link">&lt;/textarea>
                 </pre>
             </li>
-            <li>jQuery API：<a href="http://kindeditor.net/docs/index.html" target="_blank">http://kindeditor.net/docs/index.html</a></li>
+            <li>jQuery API：<a uri="http://kindeditor.net/docs/index.html" target="_blank">http://kindeditor.net/docs/index.html</a></li>
         </ul>
         <h4>参数（options）<code>basePath</code><small>为kindeditor插件目录</small></h4>
         <table class="table table-bordered table-striped table-hover">
@@ -54,7 +54,7 @@
                     <td>items</td>
                     <td>string</td>
                     <td>
-                        <a href="javascript:;" data-toggle="dialog" data-target="#doc-kindeditor-items" data-id="dialog-doc-items" data-width="800" data-height="320" data-on-load="doc_kindeditor_dialog_onload" data-title="默认items">点我查看</a>
+                        <a uri="javascript:;" data-toggle="dialog" data-target="#doc-kindeditor-items" data-id="dialog-doc-items" data-width="800" data-height="320" data-on-load="doc_kindeditor_dialog_onload" data-title="默认items">点我查看</a>
                         <span id="doc-kindeditor-items" class="hide">
                             <p>默认items：</p>
                             <pre>
@@ -79,7 +79,7 @@
                             </pre>
                         </span>
                     </td>
-                    <td>[可选] 编辑器的工具栏显示图标，多个图标名称以<code>,</code>分隔，全部工具见：<a href="http://kindeditor.net/docs/option.html#items" target="_blank">http://kindeditor.net/docs/option.html#items</a>。</td>
+                    <td>[可选] 编辑器的工具栏显示图标，多个图标名称以<code>,</code>分隔，全部工具见：<a uri="http://kindeditor.net/docs/option.html#items" target="_blank">http://kindeditor.net/docs/option.html#items</a>。</td>
                 </tr>
                 <tr>
                     <td>uploadJson</td>
@@ -126,7 +126,7 @@
                 <tr>
                     <td>htmlTags</td>
                     <td>object</td>
-                    <td><a href="javascript:;" data-toggle="dialog" data-target="#doc-kindeditor-htmltags" data-id="dialog-doc-htmltags" data-width="700" data-height="320" data-on-load="doc_kindeditor_dialog_onload" data-title="默认htmlTags">点我查看</a>
+                    <td><a uri="javascript:;" data-toggle="dialog" data-target="#doc-kindeditor-htmltags" data-id="dialog-doc-htmltags" data-width="700" data-height="320" data-on-load="doc_kindeditor_dialog_onload" data-title="默认htmlTags">点我查看</a>
                         <span id="doc-kindeditor-htmltags" class="hide">
                             <pre>
                                 {
@@ -135,7 +135,7 @@
                                     div : ['.margin', '.padding', '.text-align'],
                                     table: ['align', 'width'],
                                     'td,th': ['align', 'valign', 'width', 'height', 'colspan', 'rowspan'],
-                                    a : ['href', 'target', 'name'],
+                                    a : ['uri', 'target', 'name'],
                                     embed : ['src', 'width', 'height', 'type', 'loop', 'autostart', 'quality', '.width', '.height', 'align', 'allowscriptaccess'],
                                     img : ['src', 'width', 'height', 'border', 'alt', 'title', 'align', '.width', '.height', '.border'],
                                     'p,ol,ul,li,blockquote,h1,h2,h3,h4,h5,h6' : [
@@ -149,11 +149,11 @@
                             </pre>
                         </span>
                     </td>
-                    <td>[可选] 指定要保留的HTML标记和属性，官方版见：<a href="http://kindeditor.net/docs/option.html#htmltags" target="_blank">http://kindeditor.net/docs/option.html#htmltags</a>。</td>
+                    <td>[可选] 指定要保留的HTML标记和属性，官方版见：<a uri="http://kindeditor.net/docs/option.html#htmltags" target="_blank">http://kindeditor.net/docs/option.html#htmltags</a>。</td>
                 </tr>
             </tbody>
         </table>
-        <p>配置更多参数请查看Kindeditor官方文档：<a href="http://kindeditor.net/docs/index.html" target="_blank">http://kindeditor.net/docs/index.html</a>，本框架引入Kindeditor插件入口在<code>bjui-plugins.js</code></p>
+        <p>配置更多参数请查看Kindeditor官方文档：<a uri="http://kindeditor.net/docs/index.html" target="_blank">http://kindeditor.net/docs/index.html</a>，本框架引入Kindeditor插件入口在<code>bjui-plugins.js</code></p>
     </div>
 </div>
 <div class="bjui-pageFooter">
