@@ -150,7 +150,7 @@ tr.ui-search-toolbar select {margin: 1px 0 0 0}
 .ui-jqgrid .tree-wrap-rtl {float: right;}
 .ui-jqgrid .ui-ellipsis {-moz-text-overflow:ellipsis;text-overflow:ellipsis;}
 
-/* Toolbar Search Menu */
+/* Toolbar Search Resource */
 .ui-search-menu { position: absolute; padding: 2px 5px;}
 .ui-jqgrid .ui-search-table { padding: 0; border: 0 none; height:20px; width:100%;}
 .ui-jqgrid .ui-search-table .ui-search-oper { width:20px; }

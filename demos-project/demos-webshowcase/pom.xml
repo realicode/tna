@@ -93,7 +93,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -119,7 +118,7 @@
     </dependencies>
 
     <build>
-        <finalName>ex-appserver</finalName>
+        <finalName>demos-webshowcase</finalName>
         <plugins>
             <!-- maven-compiler-plugin -->
             <plugin>

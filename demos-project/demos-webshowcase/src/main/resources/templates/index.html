@@ -103,7 +103,7 @@
         <!-- /.sidebar-shortcuts -->
 
         <ul class="nav nav-list">
-            <!--/*@thymesVar id="realmenus" type="com.realaicy.tna.demos.webshowcase.modules.system.menu.model.Menu"*/-->
+            <!--/*@thymesVar id="realmenus" type="com.realaicy.tna.demos.webshowcase.modules.system.menu.model.Resource"*/-->
             <li class="" th:each="menu : ${realmenus}">
                 <a th:attr="data-url=${menu.uri}" data-th-url="${menu.uri}" th:uri="'#'+${menu.uri}"
                    th:if="${ #lists.isEmpty(menu.children)}">

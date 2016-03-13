@@ -1,7 +1,10 @@
 package com.realaicy.tna.demos.webshowcase.demo;
 
-import com.realaicy.tna.demos.webshowcase.modules.system.menu.service.MenuService;
+import com.realaicy.tna.demos.webshowcase.modules.system.resource.Service.SysResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +18,10 @@ import java.util.Date;
 public class IndexController {
 
     /**
-     * The Menu service.
+     * The Resource service.
      */
     @Autowired
-    private MenuService menuService;
+    private SysResourceService sysResourceService;
 
     /**
      * Index string.
@@ -29,7 +32,12 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("realversion", new Date());
-        model.addAttribute("realmenus", menuService.getTopMenus());
+       // model.addAttribute("realmenus", menuService.getTopMenus());
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getPrincipal();
+        if(userDetails.getUsername().equals("userDetails"))
+            model.addAttribute("realmenus", sysResourceService.findAllMenus());
         return "index";
     }
 

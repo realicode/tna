@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * The type Menu controller.
+ * The type Resource controller.
  */
 @Controller
 @RequestMapping("/sysm/config")
