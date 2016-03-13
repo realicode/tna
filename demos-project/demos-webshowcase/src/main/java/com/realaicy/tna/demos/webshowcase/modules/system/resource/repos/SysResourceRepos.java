@@ -15,6 +15,6 @@ public interface SysResourceRepos extends BaseRepository<SysResource, Long> {
      *
      * @return the list
      */
-    @Query(value = "SELECT sysResource FROM SysResource sysResource WHERE parent.id=1 and sysResource.resType = 'menu'")
+    @Query(value = "SELECT sysResource FROM SysResource sysResource WHERE parent.id=1 and id!=1 and sysResource.resType = 'menu'")
     List<SysResource> findAllMenus();
 }
