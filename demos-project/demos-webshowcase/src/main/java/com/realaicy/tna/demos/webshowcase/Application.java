@@ -30,16 +30,7 @@ public class Application {
     }
 
 
-    /**
-     * Image servlet.
-     *
-     * @return the servlet
-     */
-    @Bean
-    public ServletRegistrationBean servletRegistrationBean() {
-        return new ServletRegistrationBean(
-                new com.octo.captcha.module.servlet.image.SimpleImageCaptchaServlet(), "/imagecode");
-    }
+
 
     /**
      * Data source.

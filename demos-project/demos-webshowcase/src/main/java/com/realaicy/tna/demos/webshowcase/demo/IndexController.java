@@ -1,6 +1,6 @@
 package com.realaicy.tna.demos.webshowcase.demo;
 
-import com.realaicy.tna.demos.webshowcase.modules.system.resource.Service.SysResourceService;
+import com.realaicy.tna.demos.webshowcase.modules.system.resource.service.SysResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,7 +36,7 @@ public class IndexController {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getPrincipal();
-        if(userDetails.getUsername().equals("userDetails"))
+        if(userDetails.getUsername().equals("admin"))
             model.addAttribute("realmenus", sysResourceService.findAllMenus());
         return "index";
     }
