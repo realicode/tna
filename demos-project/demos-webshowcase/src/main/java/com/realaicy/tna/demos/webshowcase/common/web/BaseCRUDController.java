@@ -3,10 +3,7 @@ package com.realaicy.tna.demos.webshowcase.common.web;
 import com.realaicy.tna.modules.core.orm.AbstractEntity;
 import com.realaicy.tna.modules.core.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -14,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by realaicy on 2016/3/14.
@@ -114,12 +112,21 @@ public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Se
     }
 
 
+    /**
+     * Readme string.
+     *
+     * @return the string
+     */
+    @RequestMapping(value = "/api/all", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public List<M> ListAll() {
+        return baseService.getAll();
+    }
+
     @RequestMapping(value = "/*")
     public String list() {
         return listView;
     }
-
-
 
     /**
      * 设置基础service

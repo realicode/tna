@@ -1,0 +1,295 @@
+<title>组织机构</title>
+<link rel="stylesheet" xmlns:th="http://www.thymeleaf.org"
+      th:href="@{/smartadmin/css/ztree/zTreeStyle.css}"
+      href="../../../../../static/smartadmin/css/ztree/zTreeStyle.css"/>
+<!-- Bread crumb is created dynamically -->
+<!-- row -->
+<div class="row">
+
+    <!-- col -->
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+
+            <!-- PAGE HEADER -->
+            <i class="fa-fw fa fa-home"></i>
+            Page Header
+			<span>>
+				Subtitle
+			</span>
+        </h1>
+    </div>
+    <!-- end col -->
+
+    <!-- right side of the page with the sparkline graphs -->
+    <!-- col -->
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+        <!-- sparks -->
+        <ul id="sparks">
+            <li class="sparks-info">
+                <h5> My Income <span class="txt-color-blue">$47,171</span></h5>
+                <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+                    1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
+                </div>
+            </li>
+            <li class="sparks-info">
+                <h5> Site Traffic <span class="txt-color-purple"><i class="fa fa-arrow-circle-up"
+                                                                    data-rel="bootstrap-tooltip" title="Increased"></i>&nbsp;45%</span>
+                </h5>
+                <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+                    110,150,300,130,400,240,220,310,220,300, 270, 210
+                </div>
+            </li>
+            <li class="sparks-info">
+                <h5> Site Orders <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span>
+                </h5>
+                <div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
+                    110,150,300,130,400,240,220,310,220,300, 270, 210
+                </div>
+            </li>
+        </ul>
+        <!-- end sparks -->
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+<!--
+	The ID "widget-grid" will start to initialize all widgets below 
+	You do not need to use widgets if you dont want to. Simply remove 
+	the <section></section> and you can use wells or panels instead 
+	-->
+
+<!-- widget grid -->
+<section id="widget-grid" class="">
+
+    <!-- row -->
+    <div class="row">
+
+        <!-- NEW WIDGET START -->
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <!-- Widget ID (each widget will need unique ID)-->
+            <div class="jarviswidget" id="wid-id-0">
+                <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+
+                -->
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
+                    <h2>Widget Title </h2>
+
+                </header>
+
+                <!-- widget div-->
+                <div>
+
+                    <!-- widget edit box -->
+                    <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+                        <input class="form-control" type="text">
+                    </div>
+                    <!-- end widget edit box -->
+
+                    <!-- widget content -->
+                    <div class="widget-body">
+
+                        <!-- this is what the user will see -->
+
+                    </div>
+                    <!-- end widget content -->
+
+                </div>
+                <!-- end widget div -->
+
+            </div>
+            <!-- end widget -->
+
+        </article>
+        <!-- WIDGET END -->
+
+    </div>
+
+    <!-- end row -->
+
+    <!-- row -->
+
+    <div class="row">
+
+        <!-- a blank row to get started -->
+        <div class="col-sm-12">
+            <!-- your contents here -->
+            啊啊 哈哈
+
+            <div class="zTreeDemoBackground left">
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- end row -->
+
+</section>
+<!-- end widget grid -->
+
+<script type="text/javascript">
+
+    /* DO NOT REMOVE : GLOBAL FUNCTIONS!
+     *
+     * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+     *
+     * // activate tooltips
+     * $("[rel=tooltip]").tooltip();
+     *
+     * // activate popovers
+     * $("[rel=popover]").popover();
+     *
+     * // activate popovers with hover states
+     * $("[rel=popover-hover]").popover({ trigger: "hover" });
+     *
+     * // activate inline charts
+     * runAllCharts();
+     *
+     * // setup widgets
+     * setup_widgets_desktop();
+     *
+     * // run form elements
+     * runAllForms();
+     *
+     ********************************
+     *
+     * pageSetUp() is needed whenever you load a page.
+     * It initializes and checks for all basic elements of the page
+     * and makes rendering easier.
+     *
+     */
+
+    pageSetUp();
+
+    /*
+     * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
+     * eg alert("my home function");
+     *
+     * var pagefunction = function() {
+     *   ...
+     * }
+     * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
+     *
+     * TO LOAD A SCRIPT:
+     * var pagefunction = function (){
+     *  loadScript(".../plugin.js", run_after_loaded);
+     * }
+     *
+     * OR you can load chain scripts by doing
+     *
+     * loadScript(".../plugin.js", function(){
+     * 	 loadScript("../plugin.js", function(){
+     * 	   ...
+     *   })
+     * });
+     */
+
+
+
+
+    // pagefunction
+
+    var pagefunction = function () {
+
+        var setting = {
+            check: {
+                enable: true,
+                chkboxType: {"Y": "ps", "N": "ps"}
+            },
+            async: {
+                enable: true, // 设置 zTree是否开启异步加载模式  加载全部信息
+                url: "http://localhost:48080/tna/sa/sys/resource/api/all2", // Ajax 获取数据的 URL 地址
+                autoParam: ["id"],   // 异步加载时自动提交父节点属性的参数,假设父节点 node = {id:1, name:"test"}，异步加载时，提交参数 zId=1
+                type: "GET",
+            },
+            data: {
+                key: {
+                    name:"resName",
+                },
+                simpleData: {
+                    enable: true,
+                    idKey: "id", // id编号命名 默认
+                    pIdKey: "parentid", // 父id编号命名 默认
+                    rootPId: 1 // 用于修正根节点父节点数据，即 pIdKey 指定的属性值
+                }
+            }
+        };
+
+        var zNodes = [
+            {id: 1, pId: 0, name: "父节点1 - 展开", open: true},
+            {id: 11, pId: 1, name: "父节点11 - 折叠"},
+            {id: 111, pId: 11, name: "叶子节点111"},
+            {id: 112, pId: 11, name: "叶子节点112"},
+            {id: 113, pId: 11, name: "叶子节点113"},
+            {id: 114, pId: 11, name: "叶子节点114"},
+            {id: 12, pId: 1, name: "父节点12 - 折叠"},
+            {id: 121, pId: 12, name: "叶子节点121"},
+            {id: 122, pId: 12, name: "叶子节点122"},
+            {id: 123, pId: 12, name: "叶子节点123"},
+            {id: 124, pId: 12, name: "叶子节点124"},
+            {id: 13, pId: 1, name: "父节点13 - 没有子节点", isParent: true},
+            {id: 2, pId: 0, name: "父节点2 - 折叠"},
+            {id: 21, pId: 2, name: "父节点21 - 展开", open: true},
+            {id: 211, pId: 21, name: "叶子节点211"},
+            {id: 212, pId: 21, name: "叶子节点212"},
+            {id: 213, pId: 21, name: "叶子节点213"},
+            {id: 214, pId: 21, name: "叶子节点214"},
+            {id: 22, pId: 2, name: "父节点22 - 折叠"},
+            {id: 221, pId: 22, name: "叶子节点221"},
+            {id: 222, pId: 22, name: "叶子节点222"},
+            {id: 223, pId: 22, name: "叶子节点223"},
+            {id: 224, pId: 22, name: "叶子节点224"},
+            {id: 23, pId: 2, name: "父节点23 - 折叠"},
+            {id: 231, pId: 23, name: "叶子节点231"},
+            {id: 232, pId: 23, name: "叶子节点232"},
+            {id: 233, pId: 23, name: "叶子节点233"},
+            {id: 234, pId: 23, name: "叶子节点234"},
+            {id: 3, pId: 0, name: "父节点3 - 没有子节点", isParent: true}
+        ];
+        //$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        $.fn.zTree.init($("#treeDemo"), setting);
+
+    };
+
+    // end pagefunction
+
+    // destroy generated instances
+    // pagedestroy is called automatically before loading a new page
+    // only usable in AJAX version!
+
+    var pagedestroy = function () {
+
+        /*
+         Example below:
+
+         $("#calednar").fullCalendar( 'destroy' );
+         if (debugState){
+         root.console.log("✔ Calendar destroyed");
+         }
+
+         For common instances, such as Jarviswidgets, Google maps, and Datatables, are automatically destroyed through the app.js loadURL mechanic
+
+         */
+    }
+
+    // end destroy
+
+    // run pagefunction
+    //pagefunction();
+    loadScript("/tna/smartadmin/js/ztree/jquery.ztree.core.min.js", pagefunction);
+</script>

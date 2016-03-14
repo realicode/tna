@@ -32,6 +32,9 @@
     <link rel="stylesheet" type="text/css" media="screen" th:href="@{/smartadmin/css/demo.min.css}"
           href="../../static/smartadmin/css/demo.min.css"/>
 
+    <link rel="stylesheet" type="text/css" media="screen" th:href="@{/smartadmin/css/font-awesome.min.css}"
+          href="../../static/smartadmin/css/real.css"/>
+
     <!-- #FAVICONS -->
     <link rel="shortcut icon" th:href="@{/smartadmin/img/favicon/fav1.ico}"
           href="../../static/smartadmin/img/favicon/fav1.ico" type="image/x-icon"/>
@@ -333,47 +336,37 @@ Use search to find needed section.
                 </ul>
             </li>
             <li class="" th:each="menu : ${realmenus}">
-                <a th:attr="data-url=${menu.resUri}" data-th-url="${menu.resUri}" th:uri="'#'+${menu.resUri}"
+                <a th:attr="data-url=${menu.resUri}" data-th-url="${menu.resUri}" th:href="${menu.resUri}"
                    th:if="${ #lists.isEmpty(menu.children)}">
                     <i class="fa fa-lg fa-fw fa-home"></i>
                     <span class="menu-item-parent" th:text="${menu.resName}"> </span>
                 </a>
 
-                <a th:attr="data-url=${menu.resUri}" th:uri="'#'+${menu.resUri}" class="dropdown-toggle"
+                <a th:attr="data-url=${menu.resUri}" th:href="${menu.resUri}"
                    th:if="${not #lists.isEmpty(menu.children)}">
-                    <i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text" th:text="${menu.resName}">
+                    <i class="fa fa-lg fa-fw fa-home"></i>
+							<span class="menu-item-parent" th:text="${menu.resName}">
 							</span>
-
-                    <b class="arrow fa fa-angle-down"></b>
                 </a>
-                <b class="arrow"></b>
-
                 <ul class="submenu" th:if="${not #lists.isEmpty(menu.children)}">
                     <li class="" th:each="menu2 : ${menu.children}">
                         <a th:attr="data-url=${menu2.resUri}" data-th-url="${menu2.resUri}"
-                           th:href="'#'+${menu2.resUri}"
+                           th:href="${menu2.resUri}"
                            th:if="${ #lists.isEmpty(menu2.children)}">
-                            <i class="menu-icon fa fa-caret-right"></i>
                             <span th:text="${menu2.resName}"></span>
                         </a>
                         <a th:attr="data-url=${menu2.resUri}" data-th-url="${menu2.resUri}"
-                           th:href="'#'+${menu2.resUri}"
-                           class="dropdown-toggle"
+                           th:href="${menu2.resUri}"
                            th:if="${not #lists.isEmpty(menu2.children)}">
-                            <i class="menu-icon fa fa-caret-right"></i>
                             <span th:text="${menu2.resName}"></span>
-                            <b class="arrow fa fa-angle-down"></b>
                         </a>
                         <b class="arrow"></b>
                         <ul class="submenu" th:if="${not #lists.isEmpty(menu2.children)}">
                             <li class="" th:each="menu3 : ${menu2.children}">
-                                <a th:attr="data-url=${menu3.resUri}" th:href="'#'+${menu3.resUri}">
+                                <a th:attr="data-url=${menu3.resUri}" th:href="${menu3.resUri}">
                                     <i class="menu-icon fa fa-leaf green"></i>
                                     <span th:text="${menu3.resName}"></span>
                                 </a>
-
-                                <b class="arrow"></b>
                             </li>
                         </ul>
                     </li>

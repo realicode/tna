@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by realaicy on 2016/3/14.
  */
 @Controller
-@RequestMapping(value = "/sys/organization")
+@RequestMapping(value = "/sa/sys/organization")
 public class OrganizationController extends BaseCRUDController<Organization, Long> {
     {
-        editView = "/sys/organization/edit";
-        listView = "/sys/organization/list";
-        showView = "/sys/organization/show";
+        editView = "/sa/realaicy/sys/organization/edit";
+        listView = "/sa/realaicy/sys/organization/list";
+        showView = "/sa/realaicy/sys/organization/show";
     }
+
+
+
 
 }

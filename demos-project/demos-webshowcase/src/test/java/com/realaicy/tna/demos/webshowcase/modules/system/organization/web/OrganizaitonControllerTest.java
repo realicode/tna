@@ -30,8 +30,7 @@ public class OrganizaitonControllerTest {
 
 	@Test
 	public void getHello() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/tna/sys/organization").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Greetings from Spring Boot!")));
+		mvc.perform(MockMvcRequestBuilders.get("/sa/sys/organization/list").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
 	}
 }
