@@ -31,11 +31,6 @@ public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Se
     protected String editView = null;
     protected String showView = null;
 
-    @Autowired
-    protected HttpServletRequest request;
-
-    @Autowired
-    protected HttpSession session;
 
     @Autowired
     private BaseService<M, ID> baseService;
