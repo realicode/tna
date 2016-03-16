@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.realaicy.tna.stdudy.dubbo</groupId>
+    <groupId>com.realaicy.tna.study.dubbo</groupId>
     <artifactId>dubbo-parent</artifactId>
     <version>2.0-SNAPSHOT</version>
 

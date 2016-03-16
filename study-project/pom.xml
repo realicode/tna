@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.realaicy.tna.stdudy</groupId>
+    <groupId>com.realaicy.tna.study</groupId>
     <artifactId>study-project</artifactId>
     <version>2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -10,6 +10,7 @@
     <name>study-project</name>
     <modules>
         <module>dubbo</module>
+        <module>lib/core/realstring</module>
     </modules>
 
     <properties>

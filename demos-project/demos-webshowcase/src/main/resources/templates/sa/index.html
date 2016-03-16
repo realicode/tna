@@ -1,6 +1,6 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns:th="http://www.thymeleaf.org" lang="zh">
-<head>
+    <head>
     <title>智慧药监平台</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -336,13 +336,13 @@ Use search to find needed section.
                 </ul>
             </li>
             <li class="" th:each="menu : ${realmenus}">
-                <a th:attr="data-url=${menu.resUri}" data-th-url="${menu.resUri}" th:href="${menu.resUri}"
+                <a
                    th:if="${ #lists.isEmpty(menu.children)}">
                     <i class="fa fa-lg fa-fw fa-home"></i>
                     <span class="menu-item-parent" th:text="${menu.resName}"> </span>
                 </a>
 
-                <a th:attr="data-url=${menu.resUri}" th:href="${menu.resUri}"
+                <a
                    th:if="${not #lists.isEmpty(menu.children)}">
                     <i class="fa fa-lg fa-fw fa-home"></i>
 							<span class="menu-item-parent" th:text="${menu.resName}">
@@ -533,26 +533,18 @@ Use search to find needed section.
 <!-- #PLUGINS -->
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
-<script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-<script>
-    if (!window.jQuery) {
-        document.write('<script th:src="@{/smartadmin/js/libs/jquery-2.1.1.min.js}" src="../../static/smartadmin/js/libs/jquery-2.1.1.min.js"><\/script>');
-    }
-</script>
 
-<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>-->
-<script src="//cdn.bootcss.com/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script>
-    if (!window.jQuery.ui) {
-        document.write('<script th:src="@{/smartadmin/js/libs/jquery-ui-1.10.3.min.js}" src="../../static/smartadmin/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-    }
-</script>
+<script th:src="@{/smartadmin/js/libs/jquery-2.1.1.min.js}"
+        src="../../static/smartadmin/js/libs/jquery-2.1.1.min.js"></script>
+<script th:src="@{/smartadmin/js/libs/jquery-ui-1.10.3.min.js}" src="../../static/smartadmin/js/libs/jquery-ui-1.10.3.min.js"></script>
 
 <!-- IMPORTANT: APP CONFIG -->
 <script th:src="@{/smartadmin/js/app.config.js}" src="../../static/smartadmin/js/app.config.js"></script>
 
 <!-- BOOTSTRAP JS -->
-<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script th:src="@{/smartadmin/js/bootstrap/bootstrap.min.js}"
+        src="../../static/smartadmin/js/bootstrap/bootstrap.min.js"></script>
+
 
 <!-- CUSTOM NOTIFICATION -->
 <script th:src="@{/smartadmin/js/notification/SmartNotification.min.js}"
