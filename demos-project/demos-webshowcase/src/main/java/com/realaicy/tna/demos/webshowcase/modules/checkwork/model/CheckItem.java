@@ -31,7 +31,6 @@ public class CheckItem extends BaseEntity<Long> {
      * 检查项内容
      */
     @Column(name = "CONTENT")
-
     private String itemContent;
     /**
      * 检查项图标
@@ -51,20 +50,20 @@ public class CheckItem extends BaseEntity<Long> {
     /**
      * 父亲菜单对象ID
      */
-    @Column(name = "pid", unique = false, nullable = true, insertable = false, updatable = false)
+    @Column(name = "PID", unique = false, nullable = true, insertable = false, updatable = false)
     private Long parentid;
     /**
      * 父亲菜单对象
      */
     @ManyToOne
-    @JoinColumn(name = "pid")
+    @JoinColumn(name = "PID")
     @JsonIgnore
     private CheckItem parent;
     /**
      * 孩子菜单对象
      */
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "parent")
-    @OrderBy("id")
+    @OrderBy("ID")
     @JsonIgnore
     private List<CheckItem> children = new ArrayList<>();
 

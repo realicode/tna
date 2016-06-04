@@ -1,7 +1,6 @@
-package com.realaicy.tna.demos.webshowcase.modules.checkwork.repos;
+package com.realaicy.tna.demos.webshowcase.modules.checkwork.service;
 
 import com.realaicy.tna.demos.webshowcase.Application;
-import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,24 +10,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by realaicy on 2016/3/13.
+ * Created by realaicy on 2016/3/14.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class CheckItemReposTest {
-
+public class DefaultCheckItemServiceTest {
 
     @Autowired
-    private  CheckItemRepos checkItemRepos;
-
+    private CheckItemService checkItemService;
 
     @Test
-    public void testFindAll() throws Exception {
-
-        assertThat(checkItemRepos.findTopCheckItemExceptRoot().size()).isEqualTo(1);
-        assertThat(checkItemRepos.findTopCheckItemExceptRoot().get(0).getChildren().size()).isEqualTo(13);
+    public void testFindAllMenus() throws Exception {
+        assertThat(checkItemService.findAllCheckItemExceptRoot().size()).isEqualTo(1);
+        assertThat(checkItemService.findAllCheckItemExceptRoot().get(0).getChildren().size()).isEqualTo(13);
     }
-
-
-
 }

@@ -18,10 +18,10 @@
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <sonar.language>java</sonar.language>
 
-        <platform-bom.version>2.0.3.RELEASE</platform-bom.version>
+        <platform-bom.version>2.0.5.RELEASE</platform-bom.version>
 
         <dozer.version>5.5.1</dozer.version>
-        <assertj.version>2.3.0</assertj.version>
+        <assertj.version>3.3.0</assertj.version>
         <jackson.version>2.6.4</jackson.version>
 
 

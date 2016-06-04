@@ -11,5 +11,5 @@ import java.util.List;
  * Created by realaicy on 16/3/14.
  */
 public interface CheckItemService extends BaseService<CheckItem, Long> {
-    List<CheckItem> findAll();
+    List<CheckItem> findAllCheckItemExceptRoot();
 }

@@ -17,6 +17,6 @@ public interface CheckItemRepos extends BaseRepository<CheckItem, Long> {
      * @return the list
      */
     @Query(value = "SELECT checkItem FROM CheckItem checkItem" +
-            " WHERE checkItem.parentid=0 and checkItem.id!=0 and show = 1 ORDER By checkItem.id ")
-    List<CheckItem> findAll();
+            " WHERE checkItem.parentid=0 and checkItem.id!=0 ORDER By checkItem.id ")
+    List<CheckItem> findTopCheckItemExceptRoot();
 }
